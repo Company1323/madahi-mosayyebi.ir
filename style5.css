@@ -1,0 +1,178 @@
+body {
+            margin: 0;
+            font-family: 'Vazir', sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+            line-height: 1.8;
+            direction: rtl;
+        }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #222;
+  color: #fff;
+
+  position: sticky; /* نوب-ار با اسکرول می‌ماند */
+  top: 0;           /* در بالای صفحه */
+  z-index: 1000;    /* روی سایر عناصر */
+  transition: all 0.3s ease; /* برای افکت نرم هنگام تغییر */
+}
+
+/* لوگو */
+.navbar .logo {
+    font-family: 'B Traffic';
+    font-size: 25px;
+}
+
+/* لیست لینک‌ها */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* لینک‌ها */
+.nav-links li a {
+    font-family: '2  Tabassom';
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* افکت خط زیر هنگام هاور */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* آیکون منوی همبرگری */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* حالت موبایل */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #222;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+    }
+
+    .navbar .logo {
+        font-family: BTraffic, sans-serif;
+        font-size: 18px;
+        margin-left: 8px;
+    }
+
+    .nav-links li {
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+        display: inline-block; /* نگه داشتن افکت زیر متن */
+    }
+
+    .nav-links.active {
+        display: flex;
+        border-radius: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border-radius: 50px;
+    }
+}
+
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* بخش نوحه‌ها */
+        .noheh-section {
+            text-align: right;
+            padding: 50px 10%;
+        }
+
+        .noheh-section h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .noheh-section hr {
+            width: 100px;
+            height: 2px;
+            background-color: #000;
+            margin: 10px auto 30px auto;
+        }
+
+        .noheh-text {
+            margin-bottom: 40px;
+        }
+
+        .noheh-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #004d40;
+        }
+
+        .noheh-text p {
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 1024px) {
+            .noheh-section {
+                padding: 40px 5%;
+            }
+            .noheh-text h2 {
+                font-size: 22px;
+            }
+            .noheh-text p {
+                font-size: 18px;
+            }
+            .nav-links li a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .noheh-section {
+                padding: 30px 5%;
+            }
+            .noheh-text h2 {
+                font-size: 20px;
+            }
+            .noheh-text p {
+                font-size: 16px;
+            }
+            .nav-links li a {
+                font-size: 14px;
+            }
+        }

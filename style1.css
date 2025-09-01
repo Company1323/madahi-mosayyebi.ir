@@ -1,0 +1,548 @@
+/* تنظیمات کلی */
+body {
+    margin: 0;
+    font-family: Vazir, sans-serif;
+    direction: rtl;
+        user-select: none;
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;   
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/Vazir-Regular.woff') format('woff');
+    font-weight: normal;  /* چون Regular است */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BTraffic';
+    src: url('fonts/BTraffic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tabassom';
+    src: url('fonts/Tabassom.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '2  Tabassom';
+    src: url('fonts/2Tabassom.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BTitr';
+    src: url('fonts/BTitrBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* تنظیمات کلی نوبار */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #222;
+  color: #fff;
+
+  position: fixed; /* همیشه روی صفحه بمونه */
+  top: 0;
+  left: 0;
+  margin-bottom: 1300px;
+  width: 97%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+
+/* لوگو */
+.navbar .logo {
+    font-family: 'B Traffic';
+    font-size: 25px;
+}
+
+/* لیست لینک‌ها */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* لینک‌ها */
+.nav-links li a {
+    font-family: '2  Tabassom';
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* افکت خط زیر هنگام هاور */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* آیکون منوی همبرگری */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* حالت موبایل */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #222;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+    }
+
+.navbar {
+    width: 360px;
+}
+
+    .navbar .logo {
+        font-family: BTraffic, sans-serif;
+        font-size: 18px;
+        margin-left: 8px;
+    }
+
+    .nav-links li {
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+        display: inline-block; /* نگه داشتن افکت زیر متن */
+    }
+
+    .nav-links.active {
+        display: flex;
+        border-radius: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border-radius: 50px;
+    }
+}
+
+/* بخش بیوگرافی */
+.bio-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 50px; 
+    direction: rtl;
+    margin-top: 60px;
+}
+
+.bio-section a{
+    color: rgb(0, 0, 0);
+}
+
+.bio-content {
+    flex: 1;
+}
+
+.bio-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-family: 'B Traffic';
+    margin-right: -100px;
+}
+
+.bio-text {
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: 'Vazir', sans-serif;
+    text-align: justify;
+    margin-right: -100px;
+    margin-left: 160px;
+}
+
+.bio-image img {
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    margin-left: -100px;
+    object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.bio-image img:hover {
+        width: 560px;
+    height: 560px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+    .bio-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .bio-image img {
+        width: 290px;
+        height: 290px;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
+
+.bio-image img:hover {
+        width: 300px;
+    height: 300px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+}
+
+    .bio-title {
+        margin: 0 auto;
+        font-family: 'BTraffic';
+    }
+
+    .bio-text {
+        gap: 20px;
+        margin: 0 auto;
+        font-family: 'Vazirmatn';
+    }
+
+    .bio-content {
+        text-align: center;
+    }
+}
+
+/* بخش نوحه‌ها */
+.noheh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background-color: #f0f0f0;
+    height: 600px;
+}
+
+.noheh h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'B Titr';
+}
+
+.noheh div:last-child {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.noheh a {
+    display: inline-block;
+    font-family: '2  Tabassom';
+    text-decoration: none;
+    color: #000000;
+    font-size: 26px;
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    width: 150px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+/* خط زیر متن هنگام هاور */
+.noheh a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #f0f0f0;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.noheh a:hover::after {
+    width: 80%;
+}
+
+/* بزرگ شدن در هاور */
+.noheh a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.noheh hr{
+    width: 80px;
+    height: 2px;
+    background-color: black;
+    color: black;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .noheh h1 {
+        font-family: 'BTitr';
+    }
+
+    .noheh div:last-child {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .noheh a {
+        display: flex;
+        justify-content: center; 
+        align-items: center;     
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        transform: translateX(22px); /* کمی به راست */
+        font-family: '2  Tabassom';
+        font-size: 38px;
+    }
+}
+
+/* پس‌زمینه مودال */
+.modal {
+    display: none; /* ابتدا مخفی است */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal h3 {
+    margin-right:190px;
+    font-size: 21px;
+}
+
+.modal p {
+    font-family: 'Vazirmatn';
+}
+
+/* محتوای مودال */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* وسط صفحه */
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+/* دکمه بستن */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: red;
+}
+
+
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10%;
+    font-family: Vazir, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    border-top: 1px solid #444;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center; /* وسط‌چین افقی */
+  align-items: center;      /* وسط‌چین عمودی */
+  gap: 50px;                /* فاصله بین دو بخش */
+  margin-top: 20px;
+}
+
+.footer-social hr {
+  display: none; /* چون flex داری، HR لازم نیست */
+}
+
+.footer-social h1 {
+    font-size: 16px;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social a:hover img {
+    transform: scale(1.2); /* بزرگ شدن آیکون در هاور */
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    footer {
+        font-size: 13px;
+        padding: 20px;
+        font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .footer-social a img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .modal h3 {
+    margin-right: 110px;
+    font-size: 21px;
+    font-family: 'BTitr';
+    }
+
+    .modal p {
+        font-family: 'Vazirmatn';
+    }
+
+}
+
+
+/* لودینگ تمام صفحه */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* شفاف */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease; /* fade out نرم */
+}
+
+/* اسپینر */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* متن زیر اسپینر */
+#loader p {
+    margin-top: 15px;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    animation: fadeText 1.5s infinite;
+    font-family: 'Vazirmatn';
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* وقتی لود کامل شد، به آرامی محو شود */
+body.loaded #loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ریسپانسیو موبایل و تبلت */
+@media (max-width: 1024px) {
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+    }
+    #loader p {
+        font-size: 18px;
+            font-family: 'Vazirmatn';
+    }
+}
+
+@media (max-width: 480px) {
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    #loader p {
+        font-size: 16px;
+            font-family: 'Vazirmatn';
+    }
+}
+
+
+
+.device {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* فاصله بین متن و آیکون */
+  color: white;
+  font-size: 18px;
+}
+
+.device img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوحه فارسی</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <p>در حال بارگذاری...</p>
+</div>
+
+
+
+        <header>
+        <nav class="navbar">
+            <div class="logo">اشعاری در مدح ، وصف ، منقبت و مراثی اهل بیت عصمت و طهارت</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index1.html">خانه</a></li>
+                <li><a href="index1.html#noheh">اشعار</a></li>
+                <li><a href="index3.html">نوحه فارسی</a></li>
+                <li><a href="index2.html">نوحه ترکی</a></li>
+                <li><a href="index4.html">متفرقه</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+    <header>
+        <h1>نوحه فارسی</h1>
+    </header>
+    <hr>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="جستجو کنید...">
+    </div>
+
+<div class="buttons-container">
+    <button onclick="location.href='page1.html'">نوحه 1</button>
+    <button onclick="location.href='page2.html'">نوحه 2</button>
+    <button onclick="location.href='page3.html'">نوحه 3</button>
+    <button onclick="location.href='page4.html'">نوحه 4</button>
+    <button onclick="location.href='page5.html'">نوحه 5</button>
+    <button onclick="location.href='page6.html'">نوحه 6</button>
+    <button onclick="location.href='page7.html'">نوحه 7</button>
+    <button onclick="location.href='page8.html'">نوحه 8</button>
+    <button onclick="location.href='page9.html'">نوحه 9</button>
+    <button onclick="location.href='page10.html'">نوحه 10</button>
+    <button onclick="location.href='page11.html'">نوحه 11</button>
+    <button onclick="location.href='page12.html'">نوحه 12</button>
+    <button onclick="location.href='page13.html'">نوحه 13</button>
+    <button onclick="location.href='page14.html'">نوحه 14</button>
+    <button onclick="location.href='page15.html'">نوحه 15</button>
+    <button onclick="location.href='page16.html'">نوحه 16</button>
+    <button onclick="location.href='page17.html'">نوحه 17</button>
+    <button onclick="location.href='page18.html'">نوحه 18</button>
+    <button onclick="location.href='page19.html'">نوحه 19</button>
+    <button onclick="location.href='page20.html'">نوحه 20</button>
+    <button onclick="location.href='page21.html'">نوحه 21</button>
+    <button onclick="location.href='page22.html'">نوحه 22</button>
+    <button onclick="location.href='page23.html'">نوحه 23</button>
+    <button onclick="location.href='page24.html'">نوحه 24</button>
+    <button onclick="location.href='page25.html'">نوحه 25</button>
+</div>
+
+
+    <script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+        const searchInput = document.getElementById("searchInput");
+        const buttons = document.querySelectorAll(".buttons-container button");
+
+        searchInput.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase();
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(searchText)) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        window.location.href = this.href;
+    });
+});
+
+// جلوگیری از لمس طولانی (موبایل)
+document.addEventListener('touchstart', function preventLongPress(e) {
+    if (e.touches.length > 1) {
+        e.preventDefault();
+    }
+}, {passive: false});
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey && ['c','x','s','u'].includes(e.key.toLowerCase())) || e.key === 'F12') {
+        e.preventDefault();
+    }
+}, false);
+window.addEventListener("load", function() {
+    // حداقل 5 ثانیه نمایش
+    setTimeout(function() {
+        document.body.classList.add("loaded");
+    }, 460);
+});
+    </script>
+
+<footer> 
+  <p>
+    طبق ماده 12 فصل سوم قانون جرائم رایانه هرگونه کپی برداری ممنوع بوده و پیگرد قانونی دارد.<br>
+    کلیه حقوق مادی و معنوی سایت نزد میثاق جرعه نوشان(محمدعلی مصیبی تبریزی) محفوظ است.<br> 
+    madahi-mosayyeb.ir ©
+  </p> 
+
+  <div class="footer-social"> 
+    <hr> 
+    <div class="device">
+      <span>گوشی / تبلت</span>
+      <a href="tg://resolve?domain=mosayyebi110" target="_blank" title="تلگرام">
+        <img src="images/img2.png" alt="Telegram">
+      </a>
+    </div>
+    <div class="device">
+      <span>لپتاپ</span>
+      <a href="https://t.me/mosayyebi110" target="_blank" title="تلگرام">
+        <img src="images/img2.png" alt="Telegram">
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

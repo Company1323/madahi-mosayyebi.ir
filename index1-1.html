@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نوحه‌ها و اشعار</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">اشعاری در مدح ، وصف ، منقبت و مراثی اهل بیت عصمت و طهارت</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index1.html">خانه</a></li>
+                <li><a href="index1.html#noheh">اشعار</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+        </nav>
+    </header>
+
+<section class="noheh-section">
+    <h1>نوحه‌ها و اشعار</h1>
+    <hr>
+    
+    <article class="noheh-text">
+        <h2>نوحه ترکی 1</h2>
+        <p>
+            متن نوحه ترکی اینجا نوشته می‌شود. می‌توانی تمام شعرها و نوحه‌هایت را اینجا اضافه کنی.
+        </p>
+    </article>
+
+</section>
+
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("bioModal");
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.querySelector(".modal .close");
+
+    openBtn.addEventListener("click", function(e){
+        e.preventDefault();
+        modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function(){
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(e){
+        if(e.target == modal){
+            modal.style.display = "none";
+        }
+    });
+});
+
+window.addEventListener("load", function() {
+    setTimeout(function() {
+        document.body.classList.add("loaded");
+    }, 400);
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        window.location.href = this.href;
+    });
+});
+
+// جلوگیری از لمس طولانی (موبایل)
+document.addEventListener('touchstart', function preventLongPress(e) {
+    if (e.touches.length > 1) {
+        e.preventDefault();
+    }
+}, {passive: false});
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey && ['c','x','s','u'].includes(e.key.toLowerCase())) || e.key === 'F12') {
+        e.preventDefault();
+    }
+}, false);
+
+
+</script>
+
+</body>
+</html>
