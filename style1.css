@@ -64,13 +64,14 @@ html {
   width: 97%;
   z-index: 1000;
   transition: all 0.3s ease;
+  height: 50px;
 }
 
 
 /* لوگو */
 .navbar .logo {
     font-family: 'B Traffic';
-    font-size: 25px;
+    font-size: 20px;
 }
 
 /* لیست لینک‌ها */
@@ -249,9 +250,8 @@ html {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     background-color: #f0f0f0;
-    height: 600px;
+    height: 900px;
 }
 
 .noheh h1 {
@@ -271,7 +271,7 @@ html {
     display: inline-block;
     font-family: '2  Tabassom';
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 26px;
     position: relative;
     padding: 10px 20px;
@@ -283,24 +283,14 @@ html {
     transition: all 0.3s ease-in-out;
     margin-top: 20px;
     background-color: transparent;
+        background: linear-gradient(135deg, #0f2c24, #145f44);
+    border: 2px solid #d4af37; /* طلایی */
+    box-shadow: 0 0 15px rgba(212,175,55,0.5),
+                0 0 25px rgba(15,163,107,0.4);
+    transition: all 0.4s ease-in-out;
 }
 
 /* خط زیر متن هنگام هاور */
-.noheh a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background: #f0f0f0;
-    left: 50%;
-    bottom: 5px;
-    transform: translateX(-50%);
-    transition: width 0.3s ease-in-out;
-}
-
-.noheh a:hover::after {
-    width: 80%;
-}
 
 /* بزرگ شدن در هاور */
 .noheh a:hover {
@@ -430,6 +420,10 @@ footer a {
     transform: scale(1.2); /* بزرگ شدن آیکون در هاور */
 }
 
+footer p{
+    margin-top: -4px;
+}
+
 /* ریسپانسیو */
 @media (max-width: 768px) {
     footer {
@@ -531,8 +525,6 @@ body.loaded #loader {
     }
 }
 
-
-
 .device {
   display: flex;
   align-items: center;
@@ -545,4 +537,70 @@ body.loaded #loader {
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+
+
+/* باکس کلی همه‌ی مناسبت‌ها */
+.events-wrapper {
+  display: flex;
+  flex-direction: column; /* اگر می‌خوای کنار هم باشن بذار row */
+  gap: 1.5rem;
+  background: #1b1b2f;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  direction: rtl;
+  font-family: Vazir, sans-serif;
+          background: linear-gradient(135deg, #0f2c24, #145f44);
+    border: 2px solid #d4af37; /* طلایی */
+    box-shadow: 0 0 15px rgba(212,175,55,0.5),
+                0 0 25px rgba(15,163,107,0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+/* هر مناسبت */
+.event-block {        background: linear-gradient(135deg, #0f2c24, #145f44);
+    border: 2px solid #d4af37; /* طلایی */
+    box-shadow: 0 0 15px rgba(167, 138, 42, 0.5),
+                0 0 25px rgba(11, 129, 84, 0.4);
+    transition: all 0.4s ease-in-out;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+/* عنوان */
+.event-block h3 {
+  font-size: 1.2rem;
+  color: #00ffd6;
+  margin-bottom: 1rem;
+}
+
+/* شمارش معکوس */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: .7rem;
+}
+
+/* استایل اعداد */
+.countdown span {
+  background: #1f4068;
+  padding: .5rem .8rem;
+  border-radius: .5rem;
+  font-weight: bold;
+  min-width: 45px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* توضیح پایین */
+.event-block p {
+  font-size: 0.9rem;
+  color: #bbb;
 }

@@ -1,29 +1,20 @@
 body {
-    font-family: Vazir, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    text-align: center;
-    background: linear-gradient(135deg, #004d40, #a7ffeb);
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* ثابت بودن هنگام اسکرول */
-    background-size: cover; /* فیت کامل */
+    font-family: Vazir, sans-serif;
+    direction: rtl;
         user-select: none;
     -webkit-user-select: none; /* Chrome, Safari */
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;   
 }
 
-@font-face {
-    font-family: 'Vazirmatn';
-    src: url('fonts/Vazirmatn-Regular.woff') format('woff');
-    font-weight: normal;  /* چون Regular است */
-    font-style: normal;
+html {
+    scroll-behavior: smooth;
 }
 
 @font-face {
     font-family: 'Vazir';
-    src: url('fonts/Vazirmatn-Regular.woff') format('woff');
+    src: url('fonts/Vazir-Regular.woff') format('woff');
     font-weight: normal;  /* چون Regular است */
     font-style: normal;
 }
@@ -36,8 +27,22 @@ body {
 }
 
 @font-face {
+    font-family: 'Modern';
+    src: url('fonts/Mj_Modern_5.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Tabassom';
     src: url('fonts/Tabassom.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Decorative';
+    src: url('fonts/Far_Decorative_Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -56,92 +61,7 @@ body {
     font-style: normal;
 }
 
-
-header h1 {
-    margin: 20px 0;
-    font-size: 32px;
-    color: #ffffff;
-    font-family: 'BTraffic';
-    margin-top: 120px;
-}
-
-.search-box {
-    margin: 20px auto;
-    text-align: center;
-}
-
-.search-box input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #979797;
-    border-radius: 8px;
-}
-
-.buttons-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 60px;
-    width: 90%;
-    margin: 30px auto;
-}
-
-.buttons-container button {
-    padding: 15px;
-    font-size: 18px;
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-
-    background: url(images/img4.jpg) no-repeat center center;
-    background-size: 100%; /* حالت اولیه */
-    background-color: transparent;
-
-    height: 160%;
-    transition: transform 0.4s ease-out, background-size 0.4s ease-out;
-            font-size: 31px;
-        font-family: '2  Tabassom';
-}
-
-.buttons-container button:hover {
-    transform: scale(1.08);
-    background-size: 115%; /* نرم بزرگ شدن بک‌گراند */
-    z-index: 10;
-}
-
-hr{
-    color: black;
-    width: 350px;
-}
-
-@media (max-width: 768px) {
-    header h1 {
-            font-family: 'BTraffic';
-    }
-
-    .buttons-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 35px;
-    }
-
-    .buttons-container button {
-        font-size: 19px;
-        padding: 12px;
-        font-family: '2  Tabassom';
-        font-weight: bold;
-    }
-}
-
-@media (max-width: 480px) {
-    .buttons-container {
-        grid-template-columns: 1fr; /* یک ستون در موبایل خیلی کوچک */
-    }
-}
-
-
+/* تنظیمات کلی نوبار */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -149,7 +69,7 @@ hr{
   padding: 15px 30px;
   background: #222;
   color: #fff;
-
+    height: 50px;
   position: fixed; /* همیشه روی صفحه بمونه */
   top: 0;
   left: 0;
@@ -157,7 +77,6 @@ hr{
   width: 97%;
   z-index: 1000;
   transition: all 0.3s ease;
-    height: 50px;
 }
 
 
@@ -207,12 +126,8 @@ hr{
     cursor: pointer;
 }
 
-
+/* حالت موبایل */
 @media (max-width: 768px) {
-    .navbar{
-            width: 360px;
-          padding:20px 30px;
-    }
     .nav-links {
         position: absolute;
         top: 60px;
@@ -224,11 +139,14 @@ hr{
         padding: 10px 0;
     }
 
+.navbar {
+    width: auto;
+}
+
     .navbar .logo {
         font-family: BTraffic, sans-serif;
         font-size: 18px;
-        margin: 0 auto;
-        text-align: right;
+        margin-left: 8px;
     }
 
     .nav-links li {
@@ -249,6 +167,81 @@ hr{
     .menu-toggle {
         display: block;
         border-radius: 50px;
+    }
+}
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* شفاف */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease; /* fade out نرم */
+        margin-top: -39px;
+}
+
+/* اسپینر */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* متن زیر اسپینر */
+#loader p {
+    margin-top: 15px;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    animation: fadeText 1.5s infinite;
+    font-family: 'Vazirmatn';
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* وقتی لود کامل شد، به آرامی محو شود */
+body.loaded #loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ریسپانسیو موبایل و تبلت */
+@media (max-width: 1024px) {
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+    }
+    #loader p {
+        font-size: 18px;
+            font-family: 'Vazirmatn';
+    }
+}
+
+@media (max-width: 480px) {
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    #loader p {
+        font-size: 16px;
+            font-family: 'Vazirmatn';
     }
 }
 
@@ -314,7 +307,7 @@ footer a {
     footer {
         font-size: 13px;
         padding: 20px;
-    font-family: Vazir, sans-serif;
+        font-family: 'Vazirmatn', sans-serif;
     }
     
     .footer-social a img {
@@ -323,76 +316,59 @@ footer a {
     }
 }
 
-#loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.3); /* شفاف */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 1s ease; /* fade out نرم */
-    margin-top: -39px;
-}
-/* اسپینر */
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid rgba(255,255,255,0.3);
-    border-top: 6px solid white;
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
+
+section{
+    margin-top: 140px;
 }
 
-@keyframes spin {
-    100% { transform: rotate(360deg); }
+section h1{
+text-align: center;
+font-family: 'BTraffic';
+font-size: 33px;
 }
 
-/* متن زیر اسپینر */
-#loader p {
-    margin-top: 15px;
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    animation: fadeText 1.5s infinite;
-    font-family: 'Vazirmatn';
+section hr{
+    margin-top: -18px;
+width: 120px;
 }
 
-@keyframes fadeText {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+section p{
+    margin-top: 25px;
+    text-align: center;
+      font-family: 'Amiri', serif;
+    font-size: 30px;
 }
 
-/* وقتی لود کامل شد، به آرامی محو شود */
-body.loaded #loader {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* ریسپانسیو موبایل و تبلت */
-@media (max-width: 1024px) {
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 5px;
-    }
-    #loader p {
-        font-size: 18px;
-            font-family: 'Vazirmatn';
+@media (max-width: 768px) {
+    section p{
+        font-size: 20px;
     }
 }
 
-@media (max-width: 480px) {
-    .spinner {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
-    }
-    #loader p {
-        font-size: 16px;
-            font-family: 'Vazirmatn';
-    }
+.voice-box {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.voice-box audio {
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #00796b;
 }
