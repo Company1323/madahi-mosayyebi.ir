@@ -28,12 +28,25 @@ html {
 }
 
 @font-face {
+    font-family: 'Modern';
+    src: url('fonts/Mj_Modern_5.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Tabassom';
     src: url('fonts/Tabassom.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Decorative';
+    src: url('fonts/Far_Decorative_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: '2  Tabassom';
     src: url('fonts/2Tabassom.woff2') format('woff2');
@@ -561,7 +574,9 @@ body.loaded #loader {
 }
 
 /* هر مناسبت */
-.event-block {        background: linear-gradient(135deg, #0f2c24, #145f44);
+.event-block {        
+    
+    background: linear-gradient(135deg, #0f2c24, #145f44);
     border: 2px solid #d4af37; /* طلایی */
     box-shadow: 0 0 15px rgba(167, 138, 42, 0.5),
                 0 0 25px rgba(11, 129, 84, 0.4);
@@ -573,9 +588,10 @@ body.loaded #loader {
 
 /* عنوان */
 .event-block h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #00ffd6;
   margin-bottom: 1rem;
+  font-family: 'BTraffic';
 }
 
 /* شمارش معکوس */
@@ -597,10 +613,37 @@ body.loaded #loader {
   min-width: 45px;
   display: inline-block;
   text-align: center;
+  font-family: 'Vazirmatn';
 }
 
 /* توضیح پایین */
 .event-block p {
   font-size: 0.9rem;
   color: #bbb;
+}
+
+
+/* ریسپانسیو برای موبایل */
+@media screen and (max-width: 480px) {
+  .events-wrapper {
+    padding: 1rem;
+  }
+  .event-block {
+    padding: 0.8rem;
+  }
+  .event-block h3 {
+    font-size: 1rem;
+  }
+  .countdown {
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
+  .countdown span {
+    min-width: 35px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .event-block p {
+    font-size: 0.8rem;
+  }
 }

@@ -100,7 +100,7 @@ header h1 {
     background-size: 100%; /* حالت اولیه */
     background-color: transparent;
 
-    height: 170px;
+    height: 150px;
     transition: transform 0.4s ease-out, background-size 0.4s ease-out;
             font-size: 31px;
         font-family: '2  Tabassom';
@@ -261,7 +261,7 @@ footer {
     font-size: 14px;
     line-height: 1.6;
     border-top: 1px solid #444;
-    margin-top: 80px;
+    margin-top: 500px;
 }
 
 footer a {
