@@ -104,20 +104,22 @@ document.addEventListener('keydown', function(e) {
     setInterval(update, 1000);
   }
 
-  // --------------------------
-  // اینجا رویدادها رو تعریف کن
-  // فرمت: new Date(YYYY, MM-1, DD, hh, mm, ss)
+createCountdown(
+  new Date(2025, 8, 28, 0, 0, 0),
+  {days:'days1',
+     hours:'hours1',
+      minutes:'minutes1', 
+       seconds:'seconds1',
+        note:'countdown-note1'}
+);
 
-  // رویداد ۱: ولادت پیامبر (۴ سپتامبر ۲۰۲۵)
   createCountdown(
-    new Date(2025, 8, 4, 0, 0, 0),
-    {days:'days1', hours:'hours1', minutes:'minutes1', seconds:'seconds1', note:'countdown-note1'}
-  );
-
-  // رویداد ۲: آغاز ماه رجب (۲۱ دسامبر ۲۰۲۵)
-  createCountdown(
-    new Date(2026, 0, 2, 0, 0, 0),
-    {days:'days2', hours:'hours2', minutes:'minutes2', seconds:'seconds2', note:'countdown-note2'}
+    new Date(2025, 8, 30, 0, 0, 0),
+    {days:'days2',
+       hours:'hours2',
+        minutes:'minutes2',
+         seconds:'seconds2',
+          note:'countdown-note2'}
   );
 
 })();
