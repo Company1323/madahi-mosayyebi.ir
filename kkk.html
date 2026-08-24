@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تبدیل متن به &lt;br&gt;</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 30px;
+      direction: rtl;
+    }
+    textarea {
+      width: 300px;
+      height: 400px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+    }
+    pre {
+      width: 300px;
+      height: 400px;
+      background: #1b1b1b;
+      border: 1px solid #333;
+      padding: 10px;
+      font-size: 16px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-y: auto;
+    }
+    button {
+      margin-top: 10px;
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h3>متن ورودی</h3>
+    <textarea id="input"></textarea><br>
+    <button onclick="convert()">تبدیل به &lt;br&gt;</button>
+  </div>
+
+  <div>
+    <h3>خروجی</h3>
+    <pre id="output"></pre>
+    <button onclick="copyOutput()">کپی خروجی</button>
+  </div>
+
+  <script>
+    function convert() {
+      const text = document.getElementById("input").value.trim();
+      const lines = text.split(/\n+/);
+      const result = lines.map(line => line + "<br>").join("\n");
+      document.getElementById("output").textContent = result;
+    }
+
+    function copyOutput() {
+      const outputText = document.getElementById("output").textContent;
+      navigator.clipboard.writeText(outputText).then(() => {
+        alert("خروجی کپی شد ✅");
+      });
+    }
+  </script>
+
+</body>
+</html>
