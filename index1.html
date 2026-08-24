@@ -28,6 +28,12 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">خانه</a></li>
                 <li><a href="#noheh">اشعار</a></li>
+                <li>
+                    <a href="#" id="cartLink">
+                        🛒 سبد خرید
+                        <span id="cartCount">0</span>
+                    </a>
+                </li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">
                 ☰
@@ -98,6 +104,31 @@
         </div>
     </div>
 
+<section class="book-section" id="book-store">
+    <h2>کتاب‌های پیشنهادی</h2>
+    <div class="book-container">
+        <!-- کارت کتاب -->
+        <div class="book-card">
+            <h3>عنوان کتاب شما</h3>
+            <p>توضیحات کوتاه درباره محتوای جذاب کتاب که مشتری را ترغیب به خرید می‌کند.</p>
+            <div class="price-tag">۲۵۰,۰۰۰ تومان</div>
+            
+<button 
+    type="button" 
+    class="cart-btn add-to-cart"
+    data-id="book1"
+    data-name="عنوان کتاب شما"
+    data-price="250000">
+    
+    افزودن به سبد خرید
+</button>
+        </div>
+    </div>
+</section>
+
+
+    </section>
+
     <section class="noheh" id="noheh">
         <h1>اشعار</h1>
         <br>
@@ -126,6 +157,29 @@
 
     </section>
 
+    <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+
+        <div class="cart-header">
+            <h2>🛒 سبد خرید</h2>
+            <span id="closeCart">&times;</span>
+        </div>
+
+        <div id="cartItems">
+            <!-- کتاب‌های انتخاب‌شده اینجا نمایش داده می‌شوند -->
+        </div>
+
+        <div class="cart-total">
+            <strong>جمع کل:</strong>
+            <span id="cartTotal">۰ تومان</span>
+        </div>
+
+        <button id="checkoutBtn" class="checkout-btn">
+            ادامه و تکمیل اطلاعات
+        </button>
+
+    </div>
+</div>
     <script type="module" src="node1.js"></script>
 <footer> 
   <p>
@@ -151,6 +205,143 @@
   </div>
 </footer>
 
+<script>
+let cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+const cartCount = document.getElementById("cartCount");
+const cartLink = document.getElementById("cartLink");
+const cartModal = document.getElementById("cartModal");
+const closeCart = document.getElementById("closeCart");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+
+function saveCart() {
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+    const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = totalCount;
+}
+
+function renderCart() {
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = `
+            <p class="empty-cart">
+                سبد خرید شما خالی است.
+            </p>
+        `;
+
+        cartTotal.textContent = "۰ تومان";
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>
+                        ${item.quantity} عدد × 
+                        ${item.price.toLocaleString("fa-IR")} تومان
+                    </p>
+                </div>
+
+                <button class="remove-item" data-index="${index}">
+                    حذف
+                </button>
+            </div>
+        `;
+    });
+
+    cartTotal.textContent =
+        total.toLocaleString("fa-IR") + " تومان";
+}
+
+document.querySelectorAll(".add-to-cart").forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        const id = this.dataset.id;
+        const name = this.dataset.name;
+        const price = Number(this.dataset.price);
+
+        const existingItem = cart.find(item => item.id === id);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({
+                id: id,
+                name: name,
+                price: price,
+                quantity: 1
+            });
+        }
+
+        saveCart();
+        updateCartCount();
+        renderCart();
+
+        alert("کتاب به سبد خرید اضافه شد.");
+    });
+
+});
+
+cartLink.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    renderCart();
+    cartModal.style.display = "flex";
+});
+
+closeCart.addEventListener("click", function() {
+    cartModal.style.display = "none";
+});
+
+cartItems.addEventListener("click", function(e) {
+
+    if (e.target.classList.contains("remove-item")) {
+
+        const index = Number(e.target.dataset.index);
+
+        cart.splice(index, 1);
+
+        saveCart();
+        updateCartCount();
+        renderCart();
+    }
+
+});
+
+document.getElementById("checkoutBtn").addEventListener("click", function() {
+
+    if (cart.length === 0) {
+        alert("سبد خرید شما خالی است.");
+        return;
+    }
+
+    window.location.href = "checkout.html";
+
+});
+
+window.addEventListener("click", function(e) {
+
+    if (e.target === cartModal) {
+        cartModal.style.display = "none";
+    }
+
+});
+
+updateCartCount();
+</script>
 
 
 </body>
