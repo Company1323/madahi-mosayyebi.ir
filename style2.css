@@ -1,398 +1,1187 @@
-body {
-    font-family: Vazir, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    text-align: center;
-    background: linear-gradient(135deg, #004d40, #a7ffeb);
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* ثابت بودن هنگام اسکرول */
-    background-size: cover; /* فیت کامل */
-        user-select: none;
-    -webkit-user-select: none; /* Chrome, Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;   
+/* =========================================================
+   STYLE2.CSS
+   آرشیو اشعار - نوحه ترکی
+   Modern Iranian Religious Archive
+========================================================= */
+
+
+/* =========================
+   فونت‌ها
+========================= */
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/Vazirmatn-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Vazirmatn';
     src: url('fonts/Vazirmatn-Regular.woff') format('woff');
-    font-weight: normal;  /* چون Regular است */
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Vazir';
-    src: url('fonts/Vazirmatn-Regular.woff') format('woff');
-    font-weight: normal;  /* چون Regular است */
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BTraffic';
     src: url('fonts/BTraffic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Tabassom';
     src: url('fonts/Tabassom.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
-    font-family: '2  Tabassom';
+    font-family: '2Tabassom';
     src: url('fonts/2Tabassom.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'BTitr';
     src: url('fonts/BTitrBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 
-header h1 {
-    margin: 20px 0;
-    font-size: 32px;
-    color: #ffffff;
-    font-family: 'BTraffic';
-    margin-top: 120px;
+/* =========================
+   رنگ‌های اصلی
+========================= */
+
+:root {
+    --bg: #070908;
+    --bg-dark: #0a0e0b;
+    --card: #101813;
+
+    --green-dark: #102b20;
+    --green: #1e5a42;
+    --green-light: #3b8a65;
+
+    --gold: #b99245;
+    --gold-light: #e7cb84;
+
+    --text: #ffffff;
+    --muted: #a9aaa3;
+
+    --border: rgba(231, 203, 132, 0.22);
 }
 
-.search-box {
-    margin: 20px auto;
+
+/* =========================
+   تنظیمات عمومی
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    direction: rtl;
+
+    font-family: 'Vazir', sans-serif;
+
     text-align: center;
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(30, 90, 66, 0.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(185, 146, 69, 0.06),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #090c0a 0%,
+            #060807 100%
+        );
+
+    background-attachment: fixed;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.search-box input {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #979797;
-    border-radius: 8px;
+
+/* شبکه بسیار ظریف در پس‌زمینه */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
 }
 
-.buttons-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 60px;
-    width: 90%;
-    margin: 30px auto;
-}
 
-.buttons-container button {
-    padding: 15px;
-    font-size: 18px;
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-
-    background: url(images/img4.jpg) no-repeat center center;
-    background-size: 100%; /* حالت اولیه */
-    background-color: transparent;
-
-    height: 170px;
-    transition: transform 0.4s ease-out, background-size 0.4s ease-out;
-            font-size: 31px;
-        font-family: '2  Tabassom';
-}
-
-.buttons-container button:hover {
-    transform: scale(1.08);
-    background-size: 115%; /* نرم بزرگ شدن بک‌گراند */
-    z-index: 10;
-}
-
-hr{
-    color: black;
-    width: 350px;
-}
-
-@media (max-width: 768px) {
-    header h1 {
-            font-family: 'BTraffic';
-    }
-
-    .buttons-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 35px;
-    }
-
-    .buttons-container button {
-        font-size: 19px;
-        padding: 12px;
-        font-family: '2  Tabassom';
-        font-weight: bold;
-    }
-}
-
-@media (max-width: 480px) {
-    .buttons-container {
-        grid-template-columns: 1fr; /* یک ستون در موبایل خیلی کوچک */
-    }
-}
-
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #222;
-  color: #fff;
+    position: fixed;
 
-  position: fixed; /* همیشه روی صفحه بمونه */
-  top: 0;
-  left: 0;
-  margin-bottom: 1300px;
-  width: 97%;
-  z-index: 1000;
-  transition: all 0.3s ease;
-    height: 50px;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 7%;
+
+    z-index: 1000;
+
+    color: white;
+
+    background:
+        rgba(7, 9, 8, 0.80);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        0.35s ease;
 }
 
 
 /* لوگو */
+
 .navbar .logo {
-    font-family: 'B Traffic';
-    font-size: 25px;
+    max-width: 510px;
+
+    color:
+        var(--gold-light);
+
+    font-family:
+        'BTraffic', sans-serif;
+
+    font-size:
+        24px;
+
+    line-height:
+        1.35;
+
+    text-shadow:
+        0 0 20px rgba(231,203,132,0.12);
 }
 
-/* لیست لینک‌ها */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
 
 /* لینک‌ها */
-.nav-links li a {
-    font-family: '2  Tabassom';
-    text-decoration: none;
-    color: #fff;
-    font-size: 26px;
-    position: relative;
-    padding-bottom: 5px;
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
 }
 
-/* افکت خط زیر هنگام هاور */
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: rgb(255, 255, 255);
-  left: 0;
-  bottom: 0;
-  transition: 0.3s;
+
+.nav-links li a {
+    position: relative;
+
+    padding: 10px 2px;
+
+    color: #e7e7e2;
+
+    font-family:
+        '2Tabassom', sans-serif;
+
+    font-size:
+        28px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease;
 }
+
+
+/* خط طلایی */
+
+.nav-links li a::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 2px;
+    right: 0;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    transition:
+        width 0.35s ease;
+}
+
+
+.nav-links li a:hover {
+    color:
+        var(--gold-light);
+}
+
 
 .nav-links li a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* آیکون منوی همبرگری */
+
+/* =========================
+   منوی موبایل
+========================= */
+
 .menu-toggle {
     display: none;
-    font-size: 28px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        31px;
+
     cursor: pointer;
+
+    transition:
+        0.3s ease;
 }
 
 
-@media (max-width: 768px) {
-    .navbar{
-            width: 360px;
-          padding:20px 30px;
-    }
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #222;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 10px 0;
-    }
+/* =========================
+   عنوان صفحه
+========================= */
 
-    .navbar .logo {
-        font-family: BTraffic, sans-serif;
-        font-size: 18px;
-        margin: 0 auto;
-        text-align: right;
-    }
-
-    .nav-links li {
-        text-align: right;
-        padding: 10px 20px;
-    }
-
-    .nav-links li a {
-        font-size: 25px;
-        display: inline-block; /* نگه داشتن افکت زیر متن */
-    }
-
-    .nav-links.active {
-        display: flex;
-        border-radius: 15px;
-    }
-
-    .menu-toggle {
-        display: block;
-        border-radius: 50px;
-    }
+header:not(:first-of-type) {
+    padding-top: 125px;
 }
+
+
+header h1 {
+    position: relative;
+
+    display: inline-block;
+
+    margin:
+        20px auto 10px;
+
+    padding:
+        0 35px;
+
+    color:
+        var(--gold-light);
+
+    font-family:
+        'BTitr', sans-serif;
+
+    font-size:
+        clamp(38px, 5vw, 58px);
+
+    text-shadow:
+        0 0 30px rgba(231,203,132,0.12);
+}
+
+
+/* خط زیر عنوان */
+
+header h1::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 3px;
+
+    right: 50%;
+    bottom: -12px;
+
+    transform:
+        translateX(50%);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            var(--gold-light),
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* HR اصلی */
+
+body > hr {
+    width: 160px;
+    height: 1px;
+
+    margin:
+        25px auto
+        40px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+    position: relative;
+
+    width:
+        min(90%, 600px);
+
+    margin:
+        25px auto
+        55px;
+}
+
+
+.search-box::before {
+    content: "⌕";
+
+    position: absolute;
+
+    top: 50%;
+    right: 22px;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--gold);
+
+    font-size:
+        27px;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    height: 58px;
+
+    padding:
+        0 58px 0 20px;
+
+    border-radius:
+        15px;
+
+    outline: none;
+
+    color:
+        var(--text);
+
+    font-family:
+        'Vazir', sans-serif;
+
+    font-size:
+        16px;
+
+    background:
+        rgba(16, 24, 19, 0.85);
+
+    border:
+        1px solid rgba(231,203,132,0.20);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.20);
+
+    transition:
+        0.3s ease;
+}
+
+
+.search-box input::placeholder {
+    color:
+        #858981;
+}
+
+
+.search-box input:focus {
+    border-color:
+        rgba(231,203,132,0.65);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.30),
+        0 0 20px rgba(185,146,69,0.07);
+}
+
+
+/* =========================
+   BUTTONS GRID
+========================= */
+
+.buttons-container {
+    width:
+        min(1400px, 92%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        22px;
+
+    margin:
+        0 auto 80px;
+
+    padding-bottom:
+        20px;
+}
+
+
+/* =========================
+   BUTTON CARD
+========================= */
+
+.buttons-container button {
+    position: relative;
+
+    min-height: 190px;
+
+    padding:
+        28px 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    color:
+        var(--text);
+
+    font-family:
+        '2Tabassom', sans-serif;
+
+    font-size:
+        28px;
+
+    line-height:
+        1.8;
+
+    text-align:
+        center;
+
+    border-radius:
+        18px;
+
+    border:
+        1px solid rgba(231,203,132,0.22);
+
+    background:
+        linear-gradient(
+            rgba(7, 12, 9, 0.58),
+            rgba(7, 12, 9, 0.80)
+        ),
+        url("images/img4.jpg")
+        center / cover no-repeat;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.28);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* لایه رنگی کارت */
+
+.buttons-container button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16, 43, 32, 0.35),
+            rgba(0,0,0,0.15)
+        );
+
+    transition:
+        0.4s ease;
+
+    pointer-events: none;
+}
+
+
+/* متن بالای لایه */
+
+.buttons-container button {
+    isolation:
+        isolate;
+
+        color: #ffffff;
+}
+
+
+.buttons-container button::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    transition:
+        width 0.4s ease;
+}
+
+
+/* شماره هر کارت */
+
+.buttons-container button:nth-child(1)::before,
+.buttons-container button:nth-child(2)::before,
+.buttons-container button:nth-child(3)::before,
+.buttons-container button:nth-child(4)::before,
+.buttons-container button:nth-child(5)::before,
+.buttons-container button:nth-child(6)::before,
+.buttons-container button:nth-child(7)::before,
+.buttons-container button:nth-child(8)::before,
+.buttons-container button:nth-child(9)::before,
+.buttons-container button:nth-child(10)::before,
+.buttons-container button:nth-child(11)::before,
+.buttons-container button:nth-child(12)::before,
+.buttons-container button:nth-child(13)::before,
+.buttons-container button:nth-child(14)::before,
+.buttons-container button:nth-child(15)::before,
+.buttons-container button:nth-child(16)::before,
+.buttons-container button:nth-child(17)::before,
+.buttons-container button:nth-child(18)::before,
+.buttons-container button:nth-child(19)::before,
+.buttons-container button:nth-child(20)::before,
+.buttons-container button:nth-child(21)::before,
+.buttons-container button:nth-child(22)::before,
+.buttons-container button:nth-child(23)::before,
+.buttons-container button:nth-child(24)::before,
+.buttons-container button:nth-child(25)::before,
+.buttons-container button:nth-child(26)::before {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(16, 43, 32, 0.42),
+            rgba(0,0,0,0.20)
+        );
+}
+
+
+.buttons-container button:hover {
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(231,203,132,0.65);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.48),
+        0 0 25px rgba(185,146,69,0.08);
+}
+
+
+.buttons-container button:hover::before {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 90, 66, 0.58),
+            rgba(0,0,0,0.18)
+        );
+}
+
+
+.buttons-container button:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px 10%;
-    font-family: Vazir, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    border-top: 1px solid #444;
-    margin-top: 80px;
+    margin-top: 40px;
+
+    padding:
+        50px 10%
+        30px;
+
+    background:
+        #050706;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--muted);
+
+    font-family:
+        'Vazir', sans-serif;
+
+    font-size:
+        14px;
+
+    line-height:
+        2;
 }
+
+
+footer p {
+    margin: 0;
+}
+
 
 footer a {
     text-decoration: none;
 }
 
+
 .footer-social {
-  display: flex;
-  justify-content: center; /* وسط‌چین افقی */
-  align-items: center;      /* وسط‌چین عمودی */
-  gap: 50px;                /* فاصله بین دو بخش */
-  margin-top: 20px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 45px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
 }
+
 
 .footer-social hr {
-  display: none; /* چون flex داری، HR لازم نیست */
+    display: none;
 }
+
 
 .device {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* فاصله بین متن و آیکون */
-  color: white;
-  font-size: 18px;
-}
+    display: flex;
 
-.device img {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-}
+    align-items: center;
 
-.footer-social h1 {
-    font-size: 16px;
+    gap: 12px;
+
+    color:
+        var(--gold-light);
+
+    font-size:
+        16px;
 }
 
 
+.device a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(231,203,132,0.18);
+
+    transition:
+        0.3s ease;
+}
+
+
+.device a:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--gold);
+}
+
+
+.device img,
 .footer-social a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
+    width: 24px;
+    height: 24px;
+
+    cursor: pointer;
+
+    transition:
+        0.3s ease;
 }
 
-.footer-social a:hover img {
-    transform: scale(1.2); /* بزرگ شدن آیکون در هاور */
-}
 
-/* ریسپانسیو */
-@media (max-width: 768px) {
-    footer {
-        font-size: 13px;
-        padding: 20px;
-    font-family: Vazir, sans-serif;
-    }
-    
-    .footer-social a img {
-        width: 25px;
-        height: 25px;
-    }
-}
+/* =========================
+   LOADER
+========================= */
 
 #loader {
     position: fixed;
+
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3); /* شفاف */
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
     z-index: 9999;
+
+    background:
+        radial-gradient(
+            circle,
+            #173b2b,
+            #070908 65%
+        );
+
     opacity: 1;
-    transition: opacity 1s ease; /* fade out نرم */
-    margin-top: -39px;
+
+    transition:
+        opacity 0.8s ease;
 }
-/* اسپینر */
+
+
 .spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid rgba(255,255,255,0.3);
-    border-top: 6px solid white;
-    border-radius: 50%;
-    animation: spin 1.2s linear infinite;
+    width: 65px;
+    height: 65px;
+
+    border-radius:
+        50%;
+
+    border:
+        4px solid rgba(231,203,132,0.12);
+
+    border-top-color:
+        var(--gold-light);
+
+    border-right-color:
+        var(--gold);
+
+    box-shadow:
+        0 0 35px rgba(185,146,69,0.12);
+
+    animation:
+        spin 1.1s linear infinite;
 }
+
 
 @keyframes spin {
-    100% { transform: rotate(360deg); }
+    to {
+        transform:
+            rotate(360deg);
+    }
 }
 
-/* متن زیر اسپینر */
+
 #loader p {
-    margin-top: 15px;
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    animation: fadeText 1.5s infinite;
-    font-family: 'Vazirmatn';
+    margin-top:
+        22px;
+
+    color:
+        var(--gold-light);
+
+    font-family:
+        'BTraffic', sans-serif;
+
+    font-size:
+        24px;
+
+    animation:
+        fadeText 1.5s infinite;
 }
+
 
 @keyframes fadeText {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%, 100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
-/* وقتی لود کامل شد، به آرامی محو شود */
+
 body.loaded #loader {
     opacity: 0;
+
     pointer-events: none;
 }
 
-/* ریسپانسیو موبایل و تبلت */
-@media (max-width: 1024px) {
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 5px;
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .buttons-container {
+        grid-template-columns:
+            repeat(3, 1fr);
     }
-    #loader p {
-        font-size: 18px;
-            font-family: 'Vazirmatn';
+
+    .navbar {
+        padding:
+            0 4%;
+    }
+
+    .nav-links {
+        gap:
+            15px;
+    }
+
+    .navbar .logo {
+        max-width:
+            380px;
+
+        font-size:
+            20px;
     }
 }
 
-@media (max-width: 480px) {
-    .spinner {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height:
+            70px;
+
+        padding:
+            0 20px;
     }
+
+
+    .navbar .logo {
+        max-width:
+            250px;
+
+        font-size:
+            17px;
+
+        text-align:
+            right;
+    }
+
+
+    .menu-toggle {
+        display:
+            block;
+    }
+
+
+    .nav-links {
+        position: absolute;
+
+        top:
+            70px;
+
+        right:
+            15px;
+
+        width:
+            230px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            5px;
+
+        padding:
+            15px;
+
+        background:
+            rgba(7,9,8,0.98);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            18px;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.7);
+    }
+
+
+    .nav-links.active {
+        display:
+            flex;
+    }
+
+
+    .nav-links li a {
+        display:
+            block;
+
+        padding:
+            10px;
+
+        font-size:
+            28px;
+    }
+
+
+    header:not(:first-of-type) {
+        padding-top:
+            105px;
+    }
+
+
+    header h1 {
+        font-size:
+            40px;
+    }
+
+
+    .search-box {
+        width:
+            90%;
+
+        margin-bottom:
+            40px;
+    }
+
+
+    .search-box input {
+        height:
+            54px;
+
+        font-size:
+            15px;
+    }
+
+
+    .buttons-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        width:
+            92%;
+
+        gap:
+            14px;
+    }
+
+
+    .buttons-container button {
+        min-height:
+            170px;
+
+        padding:
+            18px 13px;
+
+        font-size:
+            24px;
+
+        line-height:
+            1.65;
+    }
+
+
+    footer {
+        padding:
+            40px 20px
+            25px;
+
+        font-size:
+            13px;
+    }
+
+
+    .footer-social {
+        gap:
+            20px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar .logo {
+        max-width:
+            210px;
+
+        font-size:
+            15px;
+    }
+
+
+    .buttons-container {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+    }
+
+
+    .buttons-container button {
+        min-height:
+            145px;
+
+        font-size:
+            26px;
+    }
+
+
+    .device {
+        font-size:
+            14px;
+    }
+
+
+    .footer-social {
+        flex-direction:
+            column;
+
+        gap:
+            15px;
+    }
+
+
+    .spinner {
+        width:
+            52px;
+
+        height:
+            52px;
+
+        border-width:
+            3px;
+    }
+
+
     #loader p {
-        font-size: 16px;
-            font-family: 'Vazirmatn';
+        font-size:
+            20px;
     }
 }

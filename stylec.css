@@ -1,0 +1,414 @@
+body {
+    margin: 0;
+    font-family: Vazir, sans-serif;
+    direction: rtl;
+        user-select: none;
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;   
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/Vazir-Regular.woff') format('woff');
+    font-weight: normal;  /* چون Regular است */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BTraffic';
+    src: url('fonts/BTraffic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Modern';
+    src: url('fonts/Mj_Modern_5.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tabassom';
+    src: url('fonts/Tabassom.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Decorative';
+    src: url('fonts/Far_Decorative_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '2  Tabassom';
+    src: url('fonts/2Tabassom.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BTitr';
+    src: url('fonts/BTitrBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amiri';
+    src: url('fonts/amiri-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* تنظیمات کلی نوبار */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #222;
+  color: #fff;
+    height: 50px;
+  position: fixed; /* همیشه روی صفحه بمونه */
+  top: 0;
+  left: 0;
+  margin-bottom: 1300px;
+  width: 97%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+
+/* لوگو */
+.navbar .logo {
+    font-family: 'B Traffic';
+    font-size: 25px;
+}
+
+/* لیست لینک‌ها */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* لینک‌ها */
+.nav-links li a {
+    font-family: '2  Tabassom';
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* افکت خط زیر هنگام هاور */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* آیکون منوی همبرگری */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* حالت موبایل */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #222;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+    }
+
+.navbar {
+    width: auto;
+}
+
+    .navbar .logo {
+        font-family: BTraffic, sans-serif;
+        font-size: 18px;
+        margin-left: 8px;
+    }
+
+    .nav-links li {
+        text-align: right;
+        padding: 10px 20px;
+    }
+
+    .nav-links li a {
+        font-size: 25px;
+        display: inline-block; /* نگه داشتن افکت زیر متن */
+    }
+
+    .nav-links.active {
+        display: flex;
+        border-radius: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border-radius: 50px;
+    }
+}
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3); /* شفاف */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease; /* fade out نرم */
+    margin-top: -70px;
+}
+
+/* اسپینر */
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255,255,255,0.3);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* متن زیر اسپینر */
+#loader p {
+    margin-top: 15px;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    animation: fadeText 1.5s infinite;
+    font-family: 'Vazirmatn';
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* وقتی لود کامل شد، به آرامی محو شود */
+body.loaded #loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ریسپانسیو موبایل و تبلت */
+@media (max-width: 1024px) {
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+    }
+    #loader p {
+        font-size: 18px;
+            font-family: 'Vazirmatn';
+    }
+}
+
+@media (max-width: 480px) {
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    #loader p {
+        font-size: 16px;
+            font-family: 'Vazirmatn';
+    }
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10%;
+    font-family: Vazir, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    border-top: 1px solid #444;
+    margin-top: 80px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center; /* وسط‌چین افقی */
+  align-items: center;      /* وسط‌چین عمودی */
+  gap: 50px;                /* فاصله بین دو بخش */
+  margin-top: 20px;
+}
+
+.footer-social hr {
+  display: none; /* چون flex داری، HR لازم نیست */
+}
+
+.device {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* فاصله بین متن و آیکون */
+  color: white;
+  font-size: 18px;
+}
+
+.device img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.footer-social h1 {
+    font-size: 16px;
+}
+
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social a:hover img {
+    transform: scale(1.2); /* بزرگ شدن آیکون در هاور */
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    footer {
+        font-size: 13px;
+        padding: 20px;
+        font-family: 'Vazirmatn', sans-serif;
+    }
+    
+    .footer-social a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+section{
+    margin-top: 140px;
+}
+
+section h1{
+text-align: center;
+font-family: 'BTraffic';
+font-size: 33px;
+}
+
+section hr{
+    margin-top: -18px;
+width: 120px;
+}
+
+section p{
+    margin-top: 25px;
+    text-align: center;
+    margin-left: 15px;
+      font-family: 'Amiri', serif;
+    font-size: 50px;
+}
+
+@media (max-width: 768px) {
+    section p{
+        font-size: 20px;
+    }
+}
+
+.voice-box {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.voice-box audio {
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #00796b;
+}
+
+
+.card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+            audio {
+      width: 95%;
+      outline: none;
+    }
+    .card {
+        width: 300px;
+    }
+}

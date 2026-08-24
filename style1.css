@@ -1,649 +1,1353 @@
-/* تنظیمات کلی */
-body {
-    margin: 0;
-    font-family: Vazir, sans-serif;
-    direction: rtl;
-        user-select: none;
-    -webkit-user-select: none; /* Chrome, Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;   
+/* ==========================================================
+   MEYSAGH JOR'EH NOUSHAN
+   MODERN IRANIAN RELIGIOUS DESIGN
+========================================================== */
+
+
+/* =========================
+   FONT
+========================= */
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/Vazir-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'BTraffic';
+    src: url('fonts/BTraffic.woff') format('woff');
+}
+
+@font-face {
+    font-family: '2Tabassom';
+    src: url('fonts/2Tabassom.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'BTitr';
+    src: url('fonts/BTitrBold.woff') format('woff');
+}
+
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+    --bg: #070908;
+    --bg-2: #0d1310;
+
+    --green-dark: #102b20;
+    --green: #1e5a42;
+    --green-light: #3b8a65;
+
+    --gold: #b99245;
+    --gold-light: #e7cb84;
+
+    --text: #e8e6df;
+    --text-muted: #a8aaa4;
+
+    --border: rgba(231, 203, 132, 0.22);
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-@font-face {
-    font-family: 'Vazir';
-    src: url('fonts/Vazir-Regular.woff') format('woff');
-    font-weight: normal;  /* چون Regular است */
-    font-style: normal;
+body {
+    margin: 0;
+    direction: rtl;
+
+    font-family: 'Vazir', sans-serif;
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(30, 90, 66, 0.22),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(185, 146, 69, 0.07),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #080b09,
+            #070908
+        );
+
+    user-select: none;
 }
 
-@font-face {
-    font-family: 'BTraffic';
-    src: url('fonts/BTraffic.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+
+/* افکت نور خیلی ملایم روی کل سایت */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.012) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.012) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
 }
 
-@font-face {
-    font-family: 'Modern';
-    src: url('fonts/Mj_Modern_5.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Tabassom';
-    src: url('fonts/Tabassom.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+/* =========================
+   NAVBAR
+========================= */
 
-@font-face {
-    font-family: 'Decorative';
-    src: url('fonts/Far_Decorative_Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: '2  Tabassom';
-    src: url('fonts/2Tabassom.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'BTitr';
-    src: url('fonts/BTitrBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* تنظیمات کلی نوبار */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #222;
-  color: #fff;
+    position: fixed;
 
-  position: fixed; /* همیشه روی صفحه بمونه */
-  top: 0;
-  left: 0;
-  margin-bottom: 1300px;
-  width: 97%;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  height: 50px;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 9, 8, 0.72);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition: 0.35s ease;
 }
 
 
 /* لوگو */
+
 .navbar .logo {
-    font-family: 'B Traffic';
-    font-size: 20px;
+    max-width: 520px;
+
+    font-family: 'BTraffic', sans-serif;
+
+    font-size: 25px;
+
+    color: var(--gold-light);
+
+    line-height: 1.3;
+
+    text-shadow:
+        0 0 25px rgba(231, 203, 132, 0.13);
 }
 
-/* لیست لینک‌ها */
+
+/* NAV LINKS */
+
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
 }
 
-/* لینک‌ها */
+
 .nav-links li a {
-    font-family: '2  Tabassom';
-    text-decoration: none;
-    color: #fff;
-    font-size: 26px;
     position: relative;
-    padding-bottom: 5px;
+
+    padding: 10px 3px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-family: '2Tabassom', sans-serif;
+
+    font-size: 30px;
+
+    transition: 0.3s ease;
 }
 
-/* افکت خط زیر هنگام هاور */
+
 .nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: rgb(255, 255, 255);
-  left: 0;
-  bottom: 0;
-  transition: 0.3s;
+    content: "";
+
+    position: absolute;
+
+    bottom: 2px;
+    right: 0;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    transition: 0.35s ease;
 }
+
+
+.nav-links li a:hover {
+    color: var(--gold-light);
+}
+
 
 .nav-links li a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* آیکون منوی همبرگری */
+
+/* MENU */
+
 .menu-toggle {
     display: none;
-    font-size: 28px;
+
+    color: var(--gold-light);
+
+    font-size: 31px;
+
     cursor: pointer;
 }
 
-/* حالت موبایل */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #222;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-        padding: 10px 0;
-    }
 
-.navbar {
-    width: 360px;
-}
+/* =========================
+   BIO SECTION
+========================= */
 
-    .navbar .logo {
-        font-family: BTraffic, sans-serif;
-        font-size: 18px;
-        margin-left: 8px;
-    }
-
-    .nav-links li {
-        text-align: right;
-        padding: 10px 20px;
-    }
-
-    .nav-links li a {
-        font-size: 25px;
-        display: inline-block; /* نگه داشتن افکت زیر متن */
-    }
-
-    .nav-links.active {
-        display: flex;
-        border-radius: 15px;
-    }
-
-    .menu-toggle {
-        display: block;
-        border-radius: 50px;
-    }
-}
-
-/* بخش بیوگرافی */
 .bio-section {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr;
+
     align-items: center;
-    padding: 60px 10%;
-    gap: 50px; 
-    direction: rtl;
-    margin-top: 60px;
+
+    gap: 90px;
+
+    padding:
+        150px 10%
+        90px;
 }
 
-.bio-section a{
-    color: rgb(0, 0, 0);
-}
+
+/* CONTENT */
 
 .bio-content {
-    flex: 1;
+    position: relative;
 }
+
+
+/* عنوان کوچک بالای تیتر */
+
+.bio-content::before {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.8;
+}
+
+
+/* TITLE */
 
 .bio-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-family: 'B Traffic';
-    margin-right: -100px;
+    position: relative;
+
+    margin: 0 0 28px;
+
+    font-family: 'BTitr', sans-serif;
+
+    font-size:
+        clamp(34px, 4vw, 55px);
+
+    color: var(--gold-light);
+
+    line-height: 1.4;
 }
+
+
+.bio-title::after {
+    content: "";
+
+    display: block;
+
+    width: 110px;
+    height: 3px;
+
+    margin-top: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--gold-light),
+            transparent
+        );
+
+    border-radius: 20px;
+}
+
+
+/* TEXT */
 
 .bio-text {
-    font-size: 20px;
-    line-height: 1.8;
-    font-family: 'Vazir', sans-serif;
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #c9cbc4;
+
+    font-size: 18px;
+
+    line-height: 2.35;
+
     text-align: justify;
-    margin-right: -100px;
-    margin-left: 160px;
 }
+
+
+/* لینک بیشتر */
+
+.bio-text a {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-right: 7px;
+
+    padding: 4px 10px;
+
+    color: var(--gold-light);
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid rgba(231, 203, 132, 0.4);
+
+    transition: 0.3s ease;
+}
+
+
+.bio-text a:hover {
+    color: white;
+
+    border-color:
+        var(--gold-light);
+}
+
+
+/* =========================
+   BIO IMAGE
+========================= */
+
+.bio-image {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* قاب اول */
+
+.bio-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 460px;
+    height: 520px;
+
+    border:
+        1px solid rgba(231, 203, 132, 0.32);
+
+    border-radius:
+        230px 230px 35px 35px;
+
+    transform:
+        rotate(5deg);
+
+    transition: 0.6s ease;
+}
+
+
+/* قاب دوم */
+
+.bio-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 540px;
+
+    border:
+        1px solid rgba(59, 138, 101, 0.22);
+
+    border-radius:
+        240px 240px 40px 40px;
+
+    transform:
+        rotate(-4deg);
+
+    transition: 0.6s ease;
+}
+
+
+/* تصویر */
 
 .bio-image img {
-    width: 550px;
-    height: 550px;
-    border-radius: 50%;
-    margin-left: -100px;
+    position: relative;
+
+    z-index: 2;
+
+    width: 420px;
+    height: 480px;
+
     object-fit: cover;
-  transition: all 0.3s ease-in-out;
+
+    border-radius:
+        210px 210px 28px 28px;
+
+    border:
+        2px solid rgba(231, 203, 132, 0.7);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.65),
+
+        0 0 45px rgba(30,90,66,0.18);
+
+    filter:
+        contrast(1.03)
+        saturate(0.88);
+
+    transition: 0.6s ease;
 }
 
-.bio-image img:hover {
-        width: 560px;
-    height: 560px;
-    box-shadow: 0 0 30px rgb(0, 0, 0);
+
+.bio-image:hover img {
+    transform:
+        scale(1.025);
 }
 
-@media (max-width: 768px) {
-    .bio-section {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 40px 20px;
-    }
 
-    .bio-image img {
-        width: 290px;
-        height: 290px;
-        margin-top: 20px;
-        margin: 0 auto;
-    }
-
-.bio-image img:hover {
-        width: 300px;
-    height: 300px;
-    box-shadow: 0 0 30px rgb(0, 0, 0);
+.bio-image:hover::before {
+    transform:
+        rotate(10deg)
+        scale(1.03);
 }
 
-    .bio-title {
-        margin: 0 auto;
-        font-family: 'BTraffic';
-    }
 
-    .bio-text {
-        gap: 20px;
-        margin: 0 auto;
-        font-family: 'Vazirmatn';
-    }
-
-    .bio-content {
-        text-align: center;
-    }
+.bio-image:hover::after {
+    transform:
+        rotate(-9deg)
+        scale(1.03);
 }
 
-/* بخش نوحه‌ها */
+
+/* =========================
+   ASH'AR SECTION
+========================= */
+
 .noheh {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f0f0f0;
-    height: 900px;
-}
-
-.noheh h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-family: 'B Titr';
-}
-
-.noheh div:last-child {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.noheh a {
-    display: inline-block;
-    font-family: '2  Tabassom';
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 26px;
     position: relative;
-    padding: 10px 20px;
-    margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    width: 150px;
+
+    padding:
+        110px 10%;
+
     text-align: center;
-    transition: all 0.3s ease-in-out;
-    margin-top: 20px;
-    background-color: transparent;
-        background: linear-gradient(135deg, #0f2c24, #145f44);
-    border: 2px solid #d4af37; /* طلایی */
-    box-shadow: 0 0 15px rgba(212,175,55,0.5),
-                0 0 25px rgba(15,163,107,0.4);
-    transition: all 0.4s ease-in-out;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 43, 32, 0.9),
+            rgba(7, 9, 8, 0.98)
+        );
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
 }
 
-/* خط زیر متن هنگام هاور */
 
-/* بزرگ شدن در هاور */
-.noheh a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-}
+/* نور پس‌زمینه */
 
-.noheh hr{
-    width: 80px;
-    height: 2px;
-    background-color: black;
-    color: black;
-}
+.noheh::before {
+    content: "";
 
-/* ریسپانسیو برای موبایل */
-@media (max-width: 768px) {
-    .noheh h1 {
-        font-family: 'BTitr';
-    }
-
-    .noheh div:last-child {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center; 
-        justify-content: center;
-    }
-
-    .noheh a {
-        display: flex;
-        justify-content: center; 
-        align-items: center;     
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
-        transform: translateX(22px); /* کمی به راست */
-        font-family: '2  Tabassom';
-        font-size: 38px;
-    }
-}
-
-/* پس‌زمینه مودال */
-.modal {
-    display: none; /* ابتدا مخفی است */
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal h3 {
-    margin-right:190px;
-    font-size: 21px;
-}
-
-.modal p {
-    font-family: 'Vazirmatn';
-}
-
-/* محتوای مودال */
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto; /* وسط صفحه */
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-}
-
-/* دکمه بستن */
-.close {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.close:hover {
-    color: red;
-}
 
+    width: 600px;
+    height: 600px;
 
+    top: -300px;
+    left: 50%;
 
-footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px 10%;
-    font-family: Vazir, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    border-top: 1px solid #444;
-}
+    transform:
+        translateX(-50%);
 
-footer a {
-    text-decoration: none;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center; /* وسط‌چین افقی */
-  align-items: center;      /* وسط‌چین عمودی */
-  gap: 50px;                /* فاصله بین دو بخش */
-  margin-top: 20px;
-}
-
-.footer-social hr {
-  display: none; /* چون flex داری، HR لازم نیست */
-}
-
-.footer-social h1 {
-    font-size: 16px;
-}
-
-.footer-social a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.footer-social a:hover img {
-    transform: scale(1.2); /* بزرگ شدن آیکون در هاور */
-}
-
-footer p{
-    margin-top: -4px;
-}
-
-/* ریسپانسیو */
-@media (max-width: 768px) {
-    footer {
-        font-size: 13px;
-        padding: 20px;
-        font-family: 'Vazirmatn', sans-serif;
-    }
-
-    .footer-social a img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .modal h3 {
-    margin-right: 110px;
-    font-size: 21px;
-    font-family: 'BTitr';
-    }
-
-    .modal p {
-        font-family: 'Vazirmatn';
-    }
-
-}
-
-
-/* لودینگ تمام صفحه */
-#loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.3); /* شفاف */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 1s ease; /* fade out نرم */
-}
-
-/* اسپینر */
-.spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid rgba(255,255,255,0.3);
-    border-top: 6px solid white;
     border-radius: 50%;
-    animation: spin 1.2s linear infinite;
-}
 
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
+    background:
+        rgba(30, 90, 66, 0.16);
 
-/* متن زیر اسپینر */
-#loader p {
-    margin-top: 15px;
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    animation: fadeText 1.5s infinite;
-    font-family: 'Vazirmatn';
-}
+    filter:
+        blur(100px);
 
-@keyframes fadeText {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-}
-
-/* وقتی لود کامل شد، به آرامی محو شود */
-body.loaded #loader {
-    opacity: 0;
     pointer-events: none;
 }
 
-/* ریسپانسیو موبایل و تبلت */
-@media (max-width: 1024px) {
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 5px;
-    }
-    #loader p {
-        font-size: 18px;
-            font-family: 'Vazirmatn';
-    }
-}
 
-@media (max-width: 480px) {
-    .spinner {
-        width: 40px;
-        height: 40px;
-        border-width: 4px;
-    }
-    #loader p {
-        font-size: 16px;
-            font-family: 'Vazirmatn';
-    }
-}
+.noheh h1 {
+    position: relative;
 
-.device {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* فاصله بین متن و آیکون */
-  color: white;
-  font-size: 18px;
-}
+    margin: 0;
 
-.device img {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+    font-family: 'BTitr', sans-serif;
+
+    font-size:
+        clamp(38px, 5vw, 60px);
+
+    color: var(--gold-light);
+
+    z-index: 1;
 }
 
 
-/* باکس کلی همه‌ی مناسبت‌ها */
-.events-wrapper {
-  display: flex;
-  flex-direction: column; /* اگر می‌خوای کنار هم باشن بذار row */
-  gap: 1.5rem;
-  background: #1b1b2f;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  max-width: 500px;
-  margin: auto;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  direction: rtl;
-  font-family: Vazir, sans-serif;
-          background: linear-gradient(135deg, #0f2c24, #145f44);
-    border: 2px solid #d4af37; /* طلایی */
-    box-shadow: 0 0 15px rgba(212,175,55,0.5),
-                0 0 25px rgba(15,163,107,0.4);
-    transition: all 0.4s ease-in-out;
+.noheh hr {
+    position: relative;
+
+    width: 120px;
+    height: 2px;
+
+    margin:
+        20px auto
+        50px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            var(--gold-light),
+            var(--gold),
+            transparent
+        );
+
+    z-index: 1;
 }
 
-/* هر مناسبت */
-.event-block {        
-    
-    background: linear-gradient(135deg, #0f2c24, #145f44);
-    border: 2px solid #d4af37; /* طلایی */
-    box-shadow: 0 0 15px rgba(167, 138, 42, 0.5),
-                0 0 25px rgba(11, 129, 84, 0.4);
-    transition: all 0.4s ease-in-out;
-  padding: 1.2rem;
-  border-radius: 1rem;
-  text-align: center;
+
+/* =========================
+   MODERN NOHEH CARDS
+========================= */
+
+.noheh-links {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 1050px;
+
+    margin:
+        0 auto;
 }
+
+
+.noheh-links a {
+    position: relative;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 25px;
+
+    text-align: right;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(26, 53, 42, 0.95),
+            rgba(8, 14, 11, 0.96)
+        );
+
+    border:
+        1px solid rgba(231, 203, 132, 0.22);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* افکت نور */
+
+.noheh-links a::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    left: -100px;
+    bottom: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 164, 76, 0.08);
+
+    filter:
+        blur(30px);
+
+    transition: 0.5s ease;
+}
+
+
+.noheh-links a:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(231, 203, 132, 0.65);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.5),
+        0 0 30px rgba(185,146,69,0.08);
+}
+
+
+.noheh-links a:hover::before {
+    transform:
+        scale(1.8);
+}
+
+
+/* شماره */
+
+.noheh-number {
+    position: relative;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    color:
+        var(--gold);
+
+    letter-spacing: 2px;
+}
+
 
 /* عنوان */
-.event-block h3 {
-  font-size: 1.4rem;
-  color: #00ffd6;
-  margin-bottom: 1rem;
-  font-family: 'BTraffic';
-}
 
-/* شمارش معکوس */
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-  font-size: 1.1rem;
-  color: #fff;
-  margin-bottom: .7rem;
-}
+.noheh-links a span:nth-child(2) {
+    position: relative;
 
-/* استایل اعداد */
-.countdown span {
-  background: #1f4068;
-  padding: .5rem .8rem;
-  border-radius: .5rem;
-  font-weight: bold;
-  min-width: 45px;
-  display: inline-block;
-  text-align: center;
-  font-family: 'Vazirmatn';
-}
+    margin:
+        auto 0;
 
-/* توضیح پایین */
-.event-block p {
-  font-size: 0.9rem;
-  color: #bbb;
+    font-family:
+        '2Tabassom', sans-serif;
+
+    font-size: 36px;
+
+    color:
+        var(--text);
 }
 
 
-/* ریسپانسیو برای موبایل */
-@media screen and (max-width: 480px) {
-  .events-wrapper {
-    padding: 1rem;
-  }
-  .event-block {
-    padding: 0.8rem;
-  }
-  .event-block h3 {
-    font-size: 1rem;
-  }
-  .countdown {
-    gap: 0.3rem;
-    font-size: 0.9rem;
-  }
-  .countdown span {
-    min-width: 35px;
-    padding: 0.3rem 0.5rem;
-    font-size: 0.85rem;
-  }
-  .event-block p {
-    font-size: 0.8rem;
-  }
+/* فلش */
+
+.arrow {
+    position: relative;
+
+    align-self: flex-end;
+
+    font-size: 25px;
+
+    color:
+        var(--gold-light);
+
+    transition: 0.35s ease;
+}
+
+
+.noheh-links a:hover .arrow {
+    transform:
+        translateX(-10px);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    padding: 30px 15px;
+
+    overflow-y: auto;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.modal-content {
+    position: relative;
+
+    width: min(900px, 95%);
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+    margin:
+        8vh auto;
+
+    padding:
+        45px 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #16251e,
+            #090b09
+        );
+
+    border:
+        1px solid rgba(231,203,132,0.35);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.8);
+}
+
+
+/* اسکرول مودال */
+
+.modal-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.modal-content::-webkit-scrollbar-thumb {
+    background:
+        var(--gold);
+
+    border-radius:
+        20px;
+}
+
+
+.modal h3 {
+    margin:
+        0 0 30px;
+
+    text-align: center;
+
+    font-family:
+        'BTitr', sans-serif;
+
+    font-size: 32px;
+
+    color:
+        var(--gold-light);
+}
+
+
+.modal p {
+    color:
+        #d1d1ca;
+
+    font-family:
+        'Vazir', sans-serif;
+
+    line-height:
+        2.2;
+
+    text-align:
+        justify;
+
+    font-size:
+        16px;
+}
+
+
+.close {
+    position: absolute;
+
+    top: 18px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color:
+        var(--gold-light);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.close:hover {
+    transform:
+        rotate(90deg);
+
+    background:
+        rgba(201,164,76,0.15);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding:
+        55px 10%
+        30px;
+
+    text-align: center;
+
+    background:
+        #050706;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        2;
+}
+
+
+footer p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+.footer-social {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 45px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.06);
+}
+
+
+.footer-social hr {
+    display: none;
+}
+
+
+.device {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+        var(--gold-light);
+
+    font-size: 15px;
+}
+
+
+.device a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(231,203,132,0.16);
+
+    transition: 0.3s ease;
+}
+
+
+.device a:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--gold);
+}
+
+
+.device img {
+    width: 23px;
+    height: 23px;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    background:
+        radial-gradient(
+            circle,
+            #153527,
+            #070908 65%
+        );
+
+    transition:
+        opacity 0.8s ease;
+}
+
+
+.spinner {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(231,203,132,0.12);
+
+    border-top-color:
+        var(--gold-light);
+
+    border-right-color:
+        var(--gold);
+
+    box-shadow:
+        0 0 35px rgba(201,164,76,0.12);
+
+    animation:
+        spin 1s linear infinite;
+}
+
+
+#loader p {
+    margin-top: 25px;
+
+    color:
+        var(--gold-light);
+
+    font-family:
+        'BTraffic', sans-serif;
+
+    font-size:
+        25px;
+
+    animation:
+        loaderText 1.5s infinite;
+}
+
+
+@keyframes spin {
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes loaderText {
+    0%, 100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+body.loaded #loader {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .bio-section {
+        grid-template-columns:
+            1fr;
+
+        gap: 60px;
+
+        padding:
+            130px 7%
+            70px;
+
+        text-align:
+            center;
+    }
+
+
+    .bio-content::before {
+        text-align:
+            center;
+    }
+
+
+    .bio-title::after {
+        margin-right:
+            auto;
+
+        margin-left:
+            auto;
+    }
+
+
+    .bio-text {
+        text-align:
+            center;
+    }
+
+
+    .bio-image {
+        order:
+            -1;
+    }
+
+
+    .noheh-links {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .noheh-links a {
+        min-height:
+            150px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height:
+            68px;
+
+        padding:
+            0 20px;
+    }
+
+
+    .navbar .logo {
+        max-width:
+            240px;
+
+        font-size:
+            17px;
+    }
+
+
+    .menu-toggle {
+        display:
+            block;
+    }
+
+
+    .nav-links {
+        position: absolute;
+
+        top:
+            68px;
+
+        right:
+            15px;
+
+        width:
+            220px;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            4px;
+
+        padding:
+            15px;
+
+        background:
+            rgba(7,9,8,0.97);
+
+        border:
+            1px solid var(--border);
+
+        border-radius:
+            18px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.6);
+    }
+
+
+    .nav-links.active {
+        display:
+            flex;
+    }
+
+
+    .nav-links li a {
+        display:
+            block;
+
+        font-size:
+            29px;
+    }
+
+
+    .bio-section {
+        padding:
+            110px 25px
+            60px;
+    }
+
+
+    .bio-image::before {
+        width:
+            300px;
+
+        height:
+            350px;
+    }
+
+
+    .bio-image::after {
+        width:
+            320px;
+
+        height:
+            370px;
+    }
+
+
+    .bio-image img {
+        width:
+            280px;
+
+        height:
+            330px;
+    }
+
+
+    .bio-text {
+        font-size:
+            16px;
+    }
+
+
+    .noheh {
+        padding:
+            80px 20px;
+    }
+
+
+    .noheh-links a {
+        min-height:
+            145px;
+    }
+
+
+    .modal-content {
+        width:
+            100%;
+
+        margin:
+            4vh auto;
+
+        padding:
+            50px 20px
+            25px;
+    }
+
+
+    .modal h3 {
+        font-size:
+            27px;
+    }
+
+
+    .modal p {
+        font-size:
+            14px;
+
+        text-align:
+            right;
+    }
+
+
+    .footer-social {
+        gap:
+            20px;
+
+        flex-wrap:
+            wrap;
+    }
 }

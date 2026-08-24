@@ -176,3 +176,62 @@ body {
                 font-size: 14px;
             }
         }
+
+        
+.voice-box {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.voice-box audio {
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #895ed8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+          transition: 0.3s;
+  }
+
+.download-btn:hover {
+  background: #9b7cd5;
+        transform: translateY(-1.8px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+          padding: 10px 20.2px;
+          border-radius: 10px;
+}
+
+
+.card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+            audio {
+      width: 95%;
+      outline: none;
+    }
+    .card {
+        width: 300px;
+    }
+}
