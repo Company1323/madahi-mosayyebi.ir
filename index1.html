@@ -1,195 +1,561 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>میثاق جرعه نوشان(محمدعلی مصیبی تبریزی)</title>
+
+    <title>میثاق جرعه نوشان | محمدعلی مصیبی تبریزی</title>
+
+    <meta name="description"
+        content="سایت رسمی میثاق جرعه نوشان؛ مجموعه اشعار محمدعلی مصیبی تبریزی در مدح، منقبت و مراثی اهل بیت عصمت و طهارت، شامل اشعار فارسی، ترکی و مجموعه اشعار عاشورایی.">
+
+    <meta name="robots" content="index1, follow">
+    <meta name="author" content="محمدعلی مصیبی تبریزی">
+    <meta name="language" content="fa">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="canonical" href="https://madahi-mosayyeb.ir/">
+
     <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="style-modal.css">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="images/png" href="images/0.png">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
+        rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="images/0.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:title"
+        content="میثاق جرعه نوشان | محمدعلی مصیبی تبریزی">
+    <meta property="og:description"
+        content="مجموعه اشعار محمدعلی مصیبی تبریزی در مدح، منقبت و مراثی اهل بیت عصمت و طهارت.">
+    <meta property="og:url"
+        content="https://madahi-mosayyeb.ir/">
+    <meta property="og:image"
+        content="https://madahi-mosayyeb.ir/images/img5.jpeg">
 </head>
+
 <body>
 
+    <!-- =========================
+         LOADER
+    ========================== -->
 
-<div id="loader">
-    <div class="spinner"></div>
-    <p>در حال بارگذاری...</p>
-</div>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>در حال بارگذاری...</p>
+    </div>
 
 
-
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
     <header>
         <nav class="navbar">
-            <div class="logo">اشعاری در مدح ، وصف ، منقبت و مراثی اهل بیت عصمت و طهارت</div>
+
+            <div class="logo">
+                اشعاری در مدح، وصف، منقبت و مراثی اهل بیت عصمت و طهارت
+            </div>
+
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">خانه</a></li>
-                <li><a href="#noheh">اشعار</a></li>
+
+                <li>
+                    <a href="#homme">خانه</a>
+                </li>
+                <li>
+                    <a href="#home">درباره</a>
+                </li>
+                <li>
+                    <a href="#book-store">کتاب</a>
+                </li>
+<li class="poems-combo">
+    <button class="poems-label" type="button" onclick="togglePoemsMenu()">
+        اشعار
+    </button>
+
+    <ul class="poems-menu" id="poemsMenu">
+        <li>
+            <a href="index3.html" class="persian">فارسی</a>
+        </li>
+        <li>
+            <a href="index2.html" class="turkish">ترکی</a>
+        </li>
+        <li>
+            <a href="index4.html" class="other">متفرقه</a>
+        </li>
+    </ul>
+</li>
+
+
+
                 <li>
                     <a href="#" id="cartLink">
                         🛒 سبد خرید
-                        <span id="cartCount">0</span>
+                        <span id="cartCount">۰</span>
                     </a>
                 </li>
+
             </ul>
+
             <div class="menu-toggle" id="menu-toggle">
                 ☰
             </div>
+
         </nav>
     </header>
 
-    <section id="home" class="bio-section">
-        <div class="bio-content">
-            <h2 class="bio-title">بیوگرافی شاعر</h2>
-            <p class="bio-text">
-محمدعلی مصیبی تبریزی، متولد دوم مرداد ۱۳۵۸ در تبریز،
- از نوجوانی شعر سرود و از ۲۵ سالگی در زمینه مدح و منقبت ائمه اطهار فعالیت کرد. او بیش از ۵۰۰ قطعه شعر عاشورایی سروده است. 
-اشعار او اکنون از طریق کانال‌های تلگرامی در اختیار مادحین و ذاکرین قرار می‌گیرد.
-<br>
-چند نمونه از اشعار مشهور: «مست عشقم باده مینانی گوزلرگوزلریم»، «اثبات اولوبدی هر ئورگین کی ولاسی وار»، 
-«یابن زهرا ساده گویم دل بریدن ساده نیست»، «سلام ای یل حیدر» و «ذر عالمی عشق ایله دی طوفان».
 
-                <a href="#" id="openModal">بیشتر...</a>
-            </p>
-        </div>
-        <div class="bio-image">
-            <img src="images/img5.jpeg" alt="تصویر شاعر">
-        </div>
-    </section>
-
-    <!-- باکس پاپ‌آپ -->
-    <div id="bioModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>بیوگرافی شاعر</h3>
-            <p>
-               در دوم مرداد سال یکهزار و سیصد و پنجاه و هشت در شهر تبریز دیده به جهان گشود. <br>
-سرودن شعر رو از نوجوانی آغاز کرد . اما سرودن شعر در زمینه مدح و منقبت ائمه اطهار را ازسن بیست و پنج سالگی آغاز نمود. <br>
-بیش از 500 قطعه شعر عاشورایی درمدح و منقبت چهارده معصوم سروده اند که قرار بود اولین اثر ایشان با عنوان «میثاق جرعه نوشان» از طرف انتشارات منشور در سال 93 به چاپ برسد اما به دلیل عدم تایید بعضی از اشعار ایشان از طرف نهاد های مربوطه وعدم ارائه مجوز برای اشعاری همچون؛ ((قلم فاش یاز لعنت اهریمنه ... وهابی نسب لعنت اولسون سنه - وهابی لری شیعه شردن بولر...ابوبکریدن چوخ عمردن بولر.... ))ویا(( یابن زهرا وار گلایم گردش ایامیدن- مملکتده شیوه اجرایی احکامیدن - بعضی مسئولین امرین... )) ویا(( چوخلاری رهبر ائدوبلر ئوزونه ئوزگه لری...بیزلرین رهبری دنیاده فقط سن سن سن)) و بیش از بیست قطعه شعر دیگر و عدم موافقت شاعر نسبت به حذف این اشعار؛ این اثر به به چاپ نرسید و از قیدچاپ اشعار خود برای همیشه گذشت. <br>
-الان با توجه به گسترش فضای مجازی اشعار ایشان از طریق کانال های مختلف تلگرامی واینترنتی دراختیار مادحین و ذاکرین محترم اهل بیت علیهم السلام قرار میگیرد.
-<br>
-چند قطعه از اشعار مشهور ایشان همراه با صدای گرم مادحین محترم کشور ارائه می‌گردد : <br>
-<br>
-<br>
-<br>
-🔹 « مست عشقم باده مینانی گوزلرگوزلریم » و قطعه « اثبات اولوبدی هر ئورگین کی ولاسی وار » که با نوای مداح گرانقدرحاج احد دادی تبریزی اجرا شده است.<br>
-<br>
-🔹 « یابن زهرا ساده گویم دل بریدن ساده نیست » که  توسط حاج محسن رستگاری اجرا شده است.<br>
-<br>
-🔹 « سلام ای یل حیدر, وفاهنگینه سردار » و ((ای علی نین گوزل اوغلی))که با صدای زیبای استاد بزرگوار حاج رحیم جباری اجرا شده است.<br>
-<br>
-🔹 « قلم یل یل نینوادن دانیش » و (( ذرّ عالمینده تابع پیمان حسینچیم ))که با صدای استاد حاج علی غیبی در صالحیه تهران اجرا شده است.<br>
-<br>
-🔹((ذر عالمی عشق ایله دی طوفان ؛ یاشاسین عشق)) و (( هم فاطمه هم امّ بنینین ائوی آباد)) که با صدای خود شاعر در حسینیه سیدالشهدای تبریز اجرا شده است.<br>
-<br>
-🔹روح ادب پروره باخ...نائب پیغمبره باخ...شیعیه تاج سره باخ...حیدره باخ حیدره باخ)) با صدای حاج مهدی رسولی مداح جوان و صاحب سبک کشورمان.<br>
-<br>
-<br>
-(به نقل از سایت و کانال وزین و معظم زبده الاشعار و تشکر و سپاس ویژه از استاد و برادر بزرگوارم جناب آقای ببیرپور)<br>
-<br>
-🔸به مرور و با کمک دوستان و همکارانی که زحمت متقبل شده‌اند فایل های صوتی و تصویری مجالس فوق و سایر مجالس ومراسم مربوطه در کانال بارگذاری خواهد شد.<br>
-<br>
-((و من الله التوفیق))<br>
-<br>
-🔷به نوبه خودم از همه افرادی که در همه ایام و به نحوی از انحا مشوق بنده در امر نوکری و خدمتگزاری این آستان ملک پاسبان بوده اند کمال تشکر و امتنان را داشته و دستبوس مرام و ادب و معرفت بی بدیلشان بوده و خواهم بود.<br>
-<br>
- مصیبی تبریزی<br>
-<br>
-<br>
-ان شاءالله مجموعه اشعار جدید با سبک های دلنشین بمرور ارسال خواهند شد.
-            </p>
-        </div>
-    </div>
-
-<section class="book-section" id="book-store">
-    <h2>کتاب‌های پیشنهادی</h2>
-    <div class="book-container">
-        <!-- کارت کتاب -->
-        <div class="book-card">
-            <h3>عنوان کتاب شما</h3>
-            <p>توضیحات کوتاه درباره محتوای جذاب کتاب که مشتری را ترغیب به خرید می‌کند.</p>
-            <div class="price-tag">۲۵۰,۰۰۰ تومان</div>
-            
-<button 
-    type="button" 
-    class="cart-btn add-to-cart"
-    data-id="book1"
-    data-name="عنوان کتاب شما"
-    data-price="800000">
-    
-    افزودن به سبد خرید
-</button>
-        </div>
+    <!-- ================= HERO ================= -->
+<section class="hero" id="homme">
+    <div class="hero-content">
+        <h1>میثاق جرعه نوشان</h1>
+        <p class="hero-subtitle">اشعار محمدعلی مصیبی تبریزی</p>
+        <p class="hero-desc">
+            مجموعه‌ای از اشعار در مدح، منقبت و مراثی اهل بیت عصمت و طهارت
+        </p>
+        <a href="#noheh" class="hero-btn">مشاهده اشعار</a>
     </div>
 </section>
+<hr class="section-divider">
+    <!-- =========================
+         BIO
+    ========================== -->
 
+    <section id="home" class="bio-section">
+
+        <div class="bio-content">
+
+            <h2 class="bio-title">
+                بیوگرافی شاعر
+            </h2>
+
+            <p class="bio-text">
+
+                محمدعلی مصیبی تبریزی، متولد دوم مرداد ۱۳۵۸ در تبریز،
+                از نوجوانی شعر سرود و از ۲۵ سالگی در زمینه مدح و منقبت ائمه اطهار
+                فعالیت کرد. او بیش از ۵۰۰ قطعه شعر عاشورایی سروده است.
+
+                اشعار او اکنون از طریق کانال‌های تلگرامی در اختیار مادحین و ذاکرین قرار می‌گیرد.
+
+                <br>
+
+                چند نمونه از اشعار مشهور:
+                «مست عشقم باده مینانی گوزلرگوزلریم»،
+                «اثبات اولوبدی هر ئورگین کی ولاسی وار»،
+                «یابن زهرا ساده گویم دل بریدن ساده نیست»،
+                «سلام ای یل حیدر» و
+                «ذر عالمی عشق ایله دی طوفان».
+
+                <a href="#" id="openModal">
+                    بیشتر...
+                </a>
+
+            </p>
+
+        </div>
+
+
+        <div class="bio-image">
+
+            <img
+                src="images/img5.jpg"
+                alt="تصویر محمدعلی مصیبی تبریزی">
+
+        </div>
 
     </section>
+<hr class="section-divider">
 
-    <section class="noheh" id="noheh">
-        <h1>اشعار</h1>
-        <br>
-        <hr>
-        <br>
-<div class="noheh-links">
-    <a href="index2.html">
-        <span class="noheh-number">01</span>
-        <span>نوحه ترکی</span>
-        <span class="arrow">←</span>
-    </a>
+    <!-- =========================
+         BIO MODAL
+    ========================== -->
 
-    <a href="index3.html">
-        <span class="noheh-number">02</span>
-        <span>نوحه فارسی</span>
-        <span class="arrow">←</span>
-    </a>
+    <div id="bioModal" class="bio-modal">
 
-    <a href="index4.html">
-        <span class="noheh-number">03</span>
-        <span>متفرقه</span>
-        <span class="arrow">←</span>
-    </a>
-</div>
-        <br>
+        <div class="bio-modal-content">
 
-    </section>
+            <button
+                type="button"
+                class="bio-close"
+                id="closeBioModal"
+                aria-label="بستن">
+                ×
+            </button>
 
-    <div id="cartModal" class="cart-modal">
-    <div class="cart-content">
+            <h3>
+                بیوگرافی شاعر
+            </h3>
 
-        <div class="cart-header">
-            <h2>🛒 سبد خرید</h2>
-            <span id="closeCart">&times;</span>
+            <p>
+
+                در دوم مرداد سال یکهزار و سیصد و پنجاه و هشت در شهر تبریز دیده به جهان گشود.
+
+                <br><br>
+
+                سرودن شعر رو از نوجوانی آغاز کرد. اما سرودن شعر در زمینه مدح و منقبت
+                ائمه اطهار را از سن بیست و پنج سالگی آغاز نمود.
+
+                <br><br>
+
+                بیش از 500 قطعه شعر عاشورایی در مدح و منقبت چهارده معصوم سروده‌اند
+                که قرار بود اولین اثر ایشان با عنوان «میثاق جرعه نوشان» از طرف
+                انتشارات منشور در سال 93 به چاپ برسد اما به دلیل عدم تایید بعضی
+                از اشعار ایشان از طرف نهادهای مربوطه و عدم ارائه مجوز برای بعضی
+                از اشعار و عدم موافقت شاعر نسبت به حذف این اشعار؛ این اثر به چاپ
+                نرسید و از قید چاپ اشعار خود برای همیشه گذشت.
+
+                <br><br>
+
+                الان با توجه به گسترش فضای مجازی، اشعار ایشان از طریق کانال‌های
+                مختلف تلگرامی و اینترنتی در اختیار مادحین و ذاکرین محترم اهل بیت
+                علیهم السلام قرار می‌گیرد.
+
+                <br><br>
+
+                چند قطعه از اشعار مشهور ایشان همراه با صدای گرم مادحین محترم
+                کشور ارائه می‌گردد:
+
+                <br><br>
+
+                🔹 «مست عشقم باده مینانی گوزلرگوزلریم» و قطعه
+                «اثبات اولوبدی هر ئورگین کی ولاسی وار» که با نوای مداح
+                گرانقدر حاج احد دادی تبریزی اجرا شده است.
+
+                <br><br>
+
+                🔹 «یابن زهرا ساده گویم دل بریدن ساده نیست» که توسط
+                حاج محسن رستگاری اجرا شده است.
+
+                <br><br>
+
+                🔹 «سلام ای یل حیدر، وفاهنگینه سردار» و
+                «ای علی نین گوزل اوغلی» که با صدای زیبای استاد بزرگوار
+                حاج رحیم جباری اجرا شده است.
+
+                <br><br>
+
+                🔹 «قلم یل یل نینوادن دانیش» و
+                «ذرّ عالمینده تابع پیمان حسینچیم» که با صدای استاد
+                حاج علی غیبی در صالحیه تهران اجرا شده است.
+
+                <br><br>
+
+                🔹 «ذر عالمی عشق ایله دی طوفان؛ یاشاسین عشق» و
+                «هم فاطمه هم امّ بنینین ائوی آباد» که با صدای خود شاعر
+                در حسینیه سیدالشهدای تبریز اجرا شده است.
+
+                <br><br>
+
+                🔹 «روح ادب پروره باخ... نائب پیغمبره باخ...
+                شیعیه تاج سره باخ... حیدره باخ حیدره باخ»
+                با صدای حاج مهدی رسولی.
+
+                <br><br>
+
+                به مرور و با کمک دوستان و همکارانی که زحمت متقبل شده‌اند،
+                فایل‌های صوتی و تصویری مجالس فوق و سایر مجالس و مراسم مربوطه
+                در کانال بارگذاری خواهد شد.
+
+                <br><br>
+
+                «و من الله التوفیق»
+
+                <br><br>
+
+                به نوبه خودم از همه افرادی که در همه ایام و به نحوی از انحا
+                مشوق بنده در امر نوکری و خدمتگزاری این آستان ملک پاسبان بوده‌اند
+                کمال تشکر و امتنان را داشته و دستبوس مرام و ادب و معرفت
+                بی‌بدیلشان بوده و خواهم بود.
+
+                <br><br>
+
+                مصیبی تبریزی
+
+                <br><br>
+
+                ان شاءالله مجموعه اشعار جدید با سبک‌های دلنشین به مرور ارسال خواهند شد.
+
+            </p>
+
         </div>
-
-        <div id="cartItems">
-            <!-- کتاب‌های انتخاب‌شده اینجا نمایش داده می‌شوند -->
-        </div>
-
-        <div class="cart-total">
-            <strong>جمع کل:</strong>
-            <span id="cartTotal">۰ تومان</span>
-        </div>
-
-        <button id="checkoutBtn" class="checkout-btn">
-            ادامه و تکمیل اطلاعات
-        </button>
 
     </div>
-</div>
-    <script type="module" src="node1.js"></script>
-<footer> 
-  <p>
-    طبق ماده 12 فصل سوم قانون جرائم رایانه هرگونه کپی برداری ممنوع بوده و پیگرد قانونی دارد.<br>
-    کلیه حقوق مادی و معنوی سایت نزد میثاق جرعه نوشان(محمدعلی مصیبی تبریزی) محفوظ است.<br> 
-    madahi-mosayyeb.ir ©
-  </p> 
+<hr class="section-divider">
 
-  <div class="footer-social"> 
-    <hr> 
+    <!-- =========================
+         BOOK STORE
+    ========================== -->
+
+    <section class="book-section" id="book-store">
+
+        <h2>
+            کتاب‌ها
+        </h2>
+
+        <div class="section-line"></div>
+
+
+        <div class="book-container">
+
+            <div class="book-card">
+
+                <div class="book-img">
+
+                    <img
+                        src="KETAB.png"
+                        alt="جلد کتاب میثاق جرعه نوشان"
+                        onclick="openImage(this)">
+
+                </div>
+
+
+                <h3>
+                    میثاق جرعه نوشان
+                </h3>
+
+
+                <p>
+                    مجموعه اشعار محمدعلی مصیبی تبریزی در مدح، منقبت
+                    و مراثی اهل بیت عصمت و طهارت.
+                </p>
+
+
+                <div class="price-tag">
+                    ۸۰۰٬۰۰۰ تومان
+                </div>
+
+
+                <button
+                    type="button"
+                    class="cart-btn add-to-cart"
+                    data-id="book1"
+                    data-name="میثاق جرعه نوشان"
+                    data-price="800000">
+
+                    افزودن به سبد خرید
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGE MODAL
+    ========================== -->
+
+    <div
+        id="imageModal"
+        class="image-modal"
+        onclick="closeImage()">
+
+        <button
+            type="button"
+            class="image-modal-close"
+            onclick="event.stopPropagation(); closeImage()">
+            ×
+        </button>
+
+        <img
+            id="modalImg"
+            src=""
+            alt="نمایش بزرگ جلد کتاب"
+            onclick="event.stopPropagation()">
+
+    </div>
+
+
+    <!-- =========================
+         POEMS
+    ========================== -->
+
+    <section class="noheh" id="noheh">
+
+        <h1>
+            اشعار
+        </h1>
+
+        <hr>
+
+
+        <div class="noheh-links">
+
+            <a href="index2.html">
+
+                <span class="noheh-number">
+                    01
+                </span>
+
+                <span>
+                    نوحه ترکی
+                </span>
+
+                <span class="arrow">
+                    ←
+                </span>
+
+            </a>
+
+
+            <a href="index3.html">
+
+                <span class="noheh-number">
+                    02
+                </span>
+
+                <span>
+                    نوحه فارسی
+                </span>
+
+                <span class="arrow">
+                    ←
+                </span>
+
+            </a>
+
+
+            <a href="index4.html">
+
+                <span class="noheh-number">
+                    03
+                </span>
+
+                <span>
+                    متفرقه
+                </span>
+
+                <span class="arrow">
+                    ←
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div
+        id="cartModal"
+        class="cart-modal">
+
+        <div class="cart-content">
+
+            <div class="cart-header">
+
+                <h2>
+                    🛒 سبد خرید
+                </h2>
+
+                <button
+                    type="button"
+                    id="closeCart"
+                    aria-label="بستن سبد خرید">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    سبد خرید شما خالی است.
+                </p>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <strong>
+                    جمع کل:
+                </strong>
+
+                <span id="cartTotal">
+                    ۰ تومان
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="checkoutBtn"
+                class="checkout-btn">
+
+                ادامه و تکمیل اطلاعات
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <div class="footer-main">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <h2>
+                    میثاق جرعه نوشان
+                </h2>
+
+                <p>
+نوحه‌ها و اشعار محمدعلی مصیبی تبریزی
+                </p>
+
+            </div>
+
+
+
+            <!-- LINKS -->
+
+            <div class="footer-links">
+
+                <a href="index1.html">
+                    خانه
+                </a>
+
+                <a href="index3.html">
+                    نوحه‌های فارسی
+                </a>
+
+                <a href="index2.html">
+                    نوحه‌های ترکی
+                </a>
+
+                <a href="index4.html">
+                    اشعار متفرقه
+                </a>
+
+            </div>
+
+
+
+            <!-- TELEGRAM -->
+
+            <div class="footer-telegram">
+
+                <span>
+                    ارتباط و کانال تلگرام
+                </span>
     <div class="device">
       <span>گوشی / تبلت</span>
       <a href="tg://resolve?domain=mosayyebi110" target="_blank" title="تلگرام">
@@ -202,147 +568,808 @@
         <img src="images/img2.png" alt="Telegram">
       </a>
     </div>
-  </div>
-</footer>
-
-<script>
-let cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-
-const cartCount = document.getElementById("cartCount");
-const cartLink = document.getElementById("cartLink");
-const cartModal = document.getElementById("cartModal");
-const closeCart = document.getElementById("closeCart");
-const cartItems = document.getElementById("cartItems");
-const cartTotal = document.getElementById("cartTotal");
-
-function saveCart() {
-    localStorage.setItem("shoppingCart", JSON.stringify(cart));
-}
-
-function updateCartCount() {
-    const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
-    cartCount.textContent = totalCount;
-}
-
-function renderCart() {
-    cartItems.innerHTML = "";
-
-    if (cart.length === 0) {
-        cartItems.innerHTML = `
-            <p class="empty-cart">
-                سبد خرید شما خالی است.
-            </p>
-        `;
-
-        cartTotal.textContent = "۰ تومان";
-        return;
-    }
-
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        cartItems.innerHTML += `
-            <div class="cart-item">
-                <div>
-                    <h3>${item.name}</h3>
-                    <p>
-                        ${item.quantity} عدد × 
-                        ${item.price.toLocaleString("fa-IR")} تومان
-                    </p>
-                </div>
-
-                <button class="remove-item" data-index="${index}">
-                    حذف
-                </button>
             </div>
-        `;
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <span>
+                طبق ماده 12 فصل سوم قانون جرائم رایانه،
+                هرگونه کپی‌برداری ممنوع بوده و پیگرد قانونی دارد.
+            </span>
+
+            <span>
+                madahi-mosayyeb.ir ©
+            </span>
+
+        </div>
+
+    </footer>
+
+
+<script src="ss.js"></script>
+<script>
+    function openTelegram(event, username) {
+
+    event.preventDefault();
+
+    const appUrl = `tg://resolve?domain=${username}`;
+    const webUrl = `https://t.me/${username}`;
+
+    // تلاش برای باز کردن اپ تلگرام
+    window.location.href = appUrl;
+
+    // اگر تلگرام نصب نبود
+    setTimeout(() => {
+        window.location.href = webUrl;
+    }, 1500);
+}
+    // ==========================================
+    // LOADER
+    // ==========================================
+
+    window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
     });
 
-    cartTotal.textContent =
-        total.toLocaleString("fa-IR") + " تومان";
-}
 
-document.querySelectorAll(".add-to-cart").forEach(button => {
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
 
-    button.addEventListener("click", function() {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-        const id = this.dataset.id;
-        const name = this.dataset.name;
-        const price = Number(this.dataset.price);
+    if (menuToggle && navLinks) {
 
-        const existingItem = cart.find(item => item.id === id);
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
 
-        if (existingItem) {
-            existingItem.quantity++;
-        } else {
-            cart.push({
-                id: id,
-                name: name,
-                price: price,
-                quantity: 1
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
             });
+
+        });
+
+    }
+
+
+    // ==========================================
+    // BIO MODAL
+    // ==========================================
+
+    const openModal = document.getElementById("openModal");
+    const bioModal = document.getElementById("bioModal");
+    const closeBioModal = document.getElementById("closeBioModal");
+
+    if (openModal && bioModal && closeBioModal) {
+
+        openModal.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            bioModal.classList.add("active");
+
+            document.body.classList.add("modal-open");
+
+        });
+
+
+        closeBioModal.addEventListener("click", function () {
+
+            bioModal.classList.remove("active");
+
+            document.body.classList.remove("modal-open");
+
+        });
+
+
+        bioModal.addEventListener("click", function (event) {
+
+            if (event.target === bioModal) {
+
+                bioModal.classList.remove("active");
+
+                document.body.classList.remove("modal-open");
+
+            }
+
+        });
+
+    }
+
+
+    // ==========================================
+    // IMAGE MODAL
+    // ==========================================
+
+    function openImage(img) {
+
+        const modal =
+            document.getElementById("imageModal");
+
+        const modalImg =
+            document.getElementById("modalImg");
+
+        if (!modal || !modalImg) return;
+
+        modalImg.src = img.src;
+
+        modal.classList.add("active");
+
+        document.body.classList.add("modal-open");
+
+    }
+
+
+    function closeImage() {
+
+        const modal =
+            document.getElementById("imageModal");
+
+        if (!modal) return;
+
+        modal.classList.remove("active");
+
+        document.body.classList.remove("modal-open");
+
+    }
+
+
+    // ==========================================
+    // SHOPPING CART
+    // ==========================================
+
+    let cart = [];
+
+    try {
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("shoppingCart")
+            ) || [];
+
+    } catch (error) {
+
+        cart = [];
+
+    }
+
+
+    // ==========================================
+    // ELEMENTS
+    // ==========================================
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const cartLink =
+        document.getElementById("cartLink");
+
+    const cartModal =
+        document.getElementById("cartModal");
+
+    const closeCart =
+        document.getElementById("closeCart");
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+    const checkoutBtn =
+        document.getElementById("checkoutBtn");
+
+
+    // ==========================================
+    // ذخیره سبد خرید
+    // ==========================================
+
+    function saveCart() {
+
+        localStorage.setItem(
+            "shoppingCart",
+            JSON.stringify(cart)
+        );
+
+    }
+
+
+    // ==========================================
+    // تبدیل عدد به فارسی
+    // ==========================================
+
+    function persianNumber(number) {
+
+        return Number(number).toLocaleString("fa-IR");
+
+    }
+
+
+    // ==========================================
+    // بروزرسانی تعداد کل محصولات
+    // ==========================================
+
+    function updateCartCount() {
+
+        const totalCount =
+            cart.reduce(function (total, item) {
+
+                return total + Number(item.quantity || 0);
+
+            }, 0);
+
+
+        if (cartCount) {
+
+            cartCount.textContent =
+                persianNumber(totalCount);
+
         }
 
-        saveCart();
-        updateCartCount();
-        renderCart();
+    }
 
-        alert("کتاب به سبد خرید اضافه شد.");
-    });
 
-});
+    // ==========================================
+    // نمایش سبد خرید
+    // ==========================================
 
-cartLink.addEventListener("click", function(e) {
-    e.preventDefault();
+    function renderCart() {
+
+        if (!cartItems) return;
+
+
+        cartItems.innerHTML = "";
+
+
+        // اگر سبد خالی است
+
+        if (cart.length === 0) {
+
+            cartItems.innerHTML = `
+
+                <p class="empty-cart">
+                    سبد خرید شما خالی است.
+                </p>
+
+            `;
+
+
+            if (cartTotal) {
+
+                cartTotal.textContent =
+                    "۰ تومان";
+
+            }
+
+
+            if (checkoutBtn) {
+
+                checkoutBtn.disabled = true;
+
+            }
+
+
+            return;
+
+        }
+
+
+        if (checkoutBtn) {
+
+            checkoutBtn.disabled = false;
+
+        }
+
+
+        let total = 0;
+
+
+        // نمایش محصولات
+
+        cart.forEach(function (item, index) {
+
+            const price =
+                Number(item.price) || 0;
+
+
+            const quantity =
+                Number(item.quantity) || 1;
+
+
+            const itemTotal =
+                price * quantity;
+
+
+            total += itemTotal;
+
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div class="cart-item-info">
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+
+                        <p>
+
+                            قیمت واحد:
+
+                            ${price.toLocaleString("fa-IR")}
+
+                            تومان
+
+                        </p>
+
+
+                        <div class="quantity-control">
+
+                            <button
+                                type="button"
+                                class="quantity-btn increase"
+                                data-index="${index}"
+                                aria-label="افزایش تعداد">
+
+                                +
+
+                            </button>
+
+
+                            <span class="quantity-number">
+
+                                ${quantity.toLocaleString("fa-IR")}
+
+                            </span>
+
+
+                            <button
+                                type="button"
+                                class="quantity-btn decrease"
+                                data-index="${index}"
+                                aria-label="کاهش تعداد">
+
+                                −
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cart-item-left">
+
+                        <strong>
+
+                            ${itemTotal.toLocaleString("fa-IR")}
+
+                            تومان
+
+                        </strong>
+
+
+                        <button
+                            type="button"
+                            class="remove-item"
+                            data-index="${index}">
+
+                            حذف
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        if (cartTotal) {
+
+            cartTotal.textContent =
+                total.toLocaleString("fa-IR") +
+                " تومان";
+
+        }
+
+    }
+
+
+    // ==========================================
+    // افزودن محصول به سبد
+    // ==========================================
+
+    document
+        .querySelectorAll(".add-to-cart")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const id =
+                        this.dataset.id;
+
+                    const name =
+                        this.dataset.name;
+
+                    const price =
+                        Number(this.dataset.price);
+
+
+                    // بررسی اینکه محصول قبلاً وجود دارد
+
+                    const existingItem =
+                        cart.find(function (item) {
+
+                            return item.id === id;
+
+                        });
+
+
+                    if (existingItem) {
+
+                        existingItem.quantity =
+                            Number(existingItem.quantity) + 1;
+
+                    } else {
+
+                        cart.push({
+
+                            id: id,
+
+                            name: name,
+
+                            price: price,
+
+                            quantity: 1
+
+                        });
+
+                    }
+
+
+                    // ذخیره
+
+                    saveCart();
+
+
+                    // بروزرسانی
+
+                    updateCartCount();
+
+                    renderCart();
+
+
+                    // تغییر متن دکمه
+
+                    const originalText =
+                        this.textContent;
+
+
+                    this.textContent =
+                        "✓ به سبد خرید اضافه شد";
+
+
+                    this.classList.add("added");
+
+
+                    setTimeout(function () {
+
+                        button.textContent =
+                            originalText;
+
+                        button.classList.remove("added");
+
+                    }, 1500);
+
+                }
+            );
+
+        });
+
+
+    // ==========================================
+    // باز کردن سبد خرید
+    // ==========================================
+
+    if (cartLink) {
+
+        cartLink.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                renderCart();
+
+                cartModal.classList.add("active");
+
+                document.body.classList.add("modal-open");
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // بستن سبد خرید
+    // ==========================================
+
+    if (closeCart) {
+
+        closeCart.addEventListener(
+            "click",
+            function () {
+
+                cartModal.classList.remove("active");
+
+                document.body.classList.remove("modal-open");
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // کنترل تعداد محصولات
+    // ==========================================
+
+    if (cartItems) {
+
+        cartItems.addEventListener(
+            "click",
+            function (event) {
+
+
+                // ==================================
+                // افزایش تعداد
+                // ==================================
+
+                if (
+                    event.target.classList.contains(
+                        "increase"
+                    )
+                ) {
+
+                    const index =
+                        Number(
+                            event.target.dataset.index
+                        );
+
+
+                    if (
+                        cart[index]
+                    ) {
+
+                        cart[index].quantity =
+                            Number(cart[index].quantity) + 1;
+
+                    }
+
+
+                    saveCart();
+
+                    updateCartCount();
+
+                    renderCart();
+
+                    return;
+
+                }
+
+
+                // ==================================
+                // کاهش تعداد
+                // ==================================
+
+                if (
+                    event.target.classList.contains(
+                        "decrease"
+                    )
+                ) {
+
+                    const index =
+                        Number(
+                            event.target.dataset.index
+                        );
+
+
+                    if (!cart[index]) return;
+
+
+                    cart[index].quantity =
+                        Number(cart[index].quantity) - 1;
+
+
+                    // اگر تعداد صفر شد حذف شود
+
+                    if (
+                        cart[index].quantity <= 0
+                    ) {
+
+                        cart.splice(index, 1);
+
+                    }
+
+
+                    saveCart();
+
+                    updateCartCount();
+
+                    renderCart();
+
+                    return;
+
+                }
+
+
+                // ==================================
+                // حذف کامل محصول
+                // ==================================
+
+                if (
+                    event.target.classList.contains(
+                        "remove-item"
+                    )
+                ) {
+
+                    const index =
+                        Number(
+                            event.target.dataset.index
+                        );
+
+
+                    if (
+                        cart[index]
+                    ) {
+
+                        cart.splice(index, 1);
+
+                    }
+
+
+                    saveCart();
+
+                    updateCartCount();
+
+                    renderCart();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // کلیک بیرون سبد
+    // ==========================================
+
+    if (cartModal) {
+
+        cartModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === cartModal
+                ) {
+
+                    cartModal.classList.remove("active");
+
+                    document.body.classList.remove("modal-open");
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // رفتن به صفحه تکمیل سفارش
+    // ==========================================
+
+    if (checkoutBtn) {
+
+        checkoutBtn.addEventListener(
+            "click",
+            function () {
+
+                if (cart.length === 0) {
+
+                    alert(
+                        "سبد خرید شما خالی است."
+                    );
+
+                    return;
+
+                }
+
+
+                // سبد قبل از انتقال ذخیره شود
+
+                saveCart();
+
+
+                // صفحه درست
+
+                window.location.href =
+                    "checkout.html";
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // بستن با ESC
+    // ==========================================
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                if (bioModal) {
+
+                    bioModal.classList.remove("active");
+
+                }
+
+
+                if (cartModal) {
+
+                    cartModal.classList.remove("active");
+
+                }
+
+
+                closeImage();
+
+
+                document.body.classList.remove(
+                    "modal-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    // ==========================================
+    // شروع
+    // ==========================================
+
+    updateCartCount();
 
     renderCart();
-    cartModal.style.display = "flex";
-});
 
-closeCart.addEventListener("click", function() {
-    cartModal.style.display = "none";
-});
-
-cartItems.addEventListener("click", function(e) {
-
-    if (e.target.classList.contains("remove-item")) {
-
-        const index = Number(e.target.dataset.index);
-
-        cart.splice(index, 1);
-
-        saveCart();
-        updateCartCount();
-        renderCart();
-    }
-
-});
-
-document.getElementById("checkoutBtn").addEventListener("click", function() {
-
-    if (cart.length === 0) {
-        alert("سبد خرید شما خالی است.");
-        return;
-    }
-
-    window.location.href = "checkout.html";
-
-});
-
-window.addEventListener("click", function(e) {
-
-    if (e.target === cartModal) {
-        cartModal.style.display = "none";
-    }
-
-});
-
-updateCartCount();
 </script>
 
-
 </body>
+
 </html>

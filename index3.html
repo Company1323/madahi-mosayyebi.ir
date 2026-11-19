@@ -1,130 +1,530 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نوحه فارسی</title>
+
+    <title>نوحه فارسی | اشعار فارسی محمدعلی مصیبی تبریزی</title>
+
+    <meta name="description"
+        content="مجموعه نوحه‌ها و اشعار فارسی محمدعلی مصیبی تبریزی در مدح، منقبت و مراثی اهل بیت و اشعار عاشورایی.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://madahi-mosayyeb.ir/index3.html">
+
+    <link rel="icon" type="image/png" href="images/0.png">
+
     <link rel="stylesheet" href="style3.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="images/png" href="images/0.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<div id="loader">
-    <div class="spinner"></div>
-    <p>در حال بارگذاری...</p>
-</div>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-ring"></div>
+        <div class="loader-title">میثاق جرعه نوشان</div>
+        <div class="loader-text">در حال بارگذاری اشعار...</div>
+    </div>
 
 
-
-        <header>
+    <!-- Navbar -->
+      <header>
         <nav class="navbar">
-            <div class="logo">اشعاری در مدح ، وصف ، منقبت و مراثی اهل بیت عصمت و طهارت</div>
+
+            <div class="logo">
+                اشعاری در مدح، وصف، منقبت و مراثی اهل بیت عصمت و طهارت
+            </div>
+
             <ul class="nav-links" id="nav-links">
-                <li><a href="index1.html">خانه</a></li>
-                <li><a href="index1.html#noheh">اشعار</a></li>
-                <li><a href="index3.html">نوحه فارسی</a></li>
-                <li><a href="index2.html">نوحه ترکی</a></li>
-                <li><a href="index4.html">متفرقه</a></li>
+
+                <li>
+                    <a href="index1.html#homme">خانه</a>
+                </li>
+                <li>
+                    <a href="index1.html#home">درباره</a>
+                </li>
+                <li>
+                    <a href="index1.html#book-store">کتاب</a>
+                </li>
+<li class="poems-combo">
+    <button class="poems-label" type="button" onclick="togglePoemsMenu()">
+        اشعار
+    </button>
+
+    <ul class="poems-menu" id="poemsMenu">
+        <li>
+            <a href="index3.html" class="persian">فارسی</a>
+        </li>
+        <li>
+            <a href="index2.html" class="turkish">ترکی</a>
+        </li>
+        <li>
+            <a href="index4.html" class="other">متفرقه</a>
+        </li>
+    </ul>
+</li>
+
+
+
+                <li>
+                    <a href="#" id="cartLink">
+                        🛒 سبد خرید
+                        <span id="cartCount">۰</span>
+                    </a>
+                </li>
+
             </ul>
+
             <div class="menu-toggle" id="menu-toggle">
                 ☰
             </div>
+
         </nav>
     </header>
 
-    <header>
-        <h1>نوحه فارسی</h1>
-    </header>
-    <hr>
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="جستجو کنید...">
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-badge">
+                نوحه فارسی
+            </div>
+
+            <h1>
+                نوحه فارسی
+            </h1>
+
+            <p>
+                مجموعه نوحه‌ها و اشعار ترکی محمدعلی مصیبی تبریزی
+                <br>
+                در مدح، منقبت و مراثی اهل بیت عصمت و طهارت،
+                شامل اشعار عاشورایی و آیینی.
+            </p>
+
+            <div class="hero-line"></div>
+
+        </section>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <div class="search-wrapper">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="عنوان شعر یا موضوع مورد نظر را جستجو کنید..."
+                    aria-label="جستجو در میان اشعار">
+
+                <button id="clearSearch"
+                    class="clear-search"
+                    type="button"
+                    aria-label="پاک کردن جستجو">
+                    ×
+                </button>
+
+            </div>
+
+            <div class="search-result" id="searchResult">
+                ۲۵ عنوان در آرشیو
+            </div>
+
+        </section>
+
+
+        <!-- Categories -->
+        <section class="archive-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        ARCHIVE
+                    </span>
+
+                    <h2>
+                        فهرست نوحه‌های فارسی
+                    </h2>
+                </div>
+
+                <span class="archive-count">
+                    25
+                </span>
+
+            </div>
+
+
+            <div class="buttons-container" id="poemList">
+
+                <a href="fa1.html" class="poem-card">
+                    <span class="poem-number">۰۱</span>
+                    <span class="poem-content">
+                        <strong>به نخل ولایت ثمر فاطمه</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="fa2.html" class="poem-card">
+                    <span class="poem-number">۰۲</span>
+                    <span class="poem-content">
+                        <strong>راز و نیاز ابی عبدالله (ع)</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="mota9.html" class="poem-card">
+                    <span class="poem-number">۰۳</span>
+                    <span class="poem-content">
+                        <strong>لایلای ای جبهه لرین یورقونی ای خسته جوانلار</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="mota10.html" class="poem-card">
+                    <span class="poem-number">۰۴</span>
+                    <span class="poem-content">
+                        <strong>خدیجه (س)</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="mota12.html" class="poem-card">
+                    <span class="poem-number">۰۵</span>
+                    <span class="poem-content">
+                        <strong>تقدیم به همه حماسه آفرینان ایران زمین</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="index-arz13.html" class="poem-card">
+                    <span class="poem-number">۰۶</span>
+                    <span class="poem-content">
+                        <strong>منتظرت هستم</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page7.html" class="poem-card">
+                    <span class="poem-number">۰۷</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۷</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page8.html" class="poem-card">
+                    <span class="poem-number">۰۸</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۸</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page9.html" class="poem-card">
+                    <span class="poem-number">۰۹</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۹</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page10.html" class="poem-card">
+                    <span class="poem-number">۱۰</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۰</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page11.html" class="poem-card">
+                    <span class="poem-number">۱۱</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۱</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page12.html" class="poem-card">
+                    <span class="poem-number">۱۲</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۲</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page13.html" class="poem-card">
+                    <span class="poem-number">۱۳</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۳</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page14.html" class="poem-card">
+                    <span class="poem-number">۱۴</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۴</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page15.html" class="poem-card">
+                    <span class="poem-number">۱۵</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۵</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page16.html" class="poem-card">
+                    <span class="poem-number">۱۶</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۶</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page17.html" class="poem-card">
+                    <span class="poem-number">۱۷</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۷</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page18.html" class="poem-card">
+                    <span class="poem-number">۱۸</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۸</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page19.html" class="poem-card">
+                    <span class="poem-number">۱۹</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۱۹</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page20.html" class="poem-card">
+                    <span class="poem-number">۲۰</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۰</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page21.html" class="poem-card">
+                    <span class="poem-number">۲۱</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۱</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page22.html" class="poem-card">
+                    <span class="poem-number">۲۲</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۲</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page23.html" class="poem-card">
+                    <span class="poem-number">۲۳</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۳</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page24.html" class="poem-card">
+                    <span class="poem-number">۲۴</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۴</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+
+                <a href="page25.html" class="poem-card">
+                    <span class="poem-number">۲۵</span>
+                    <span class="poem-content">
+                        <strong>نوحه ۲۵</strong>
+                        <small>نوحه فارسی</small>
+                    </span>
+                    <span class="poem-arrow">←</span>
+                </a>
+
+            </div>
+
+
+            <div id="noResults" class="no-results">
+                <div>⌕</div>
+                <h3>موردی پیدا نشد</h3>
+                <p>عبارت دیگری را برای جستجو امتحان کنید.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div
+        id="cartModal"
+        class="cart-modal">
+
+        <div class="cart-content">
+
+            <div class="cart-header">
+
+                <h2>
+                    🛒 سبد خرید
+                </h2>
+
+                <button
+                    type="button"
+                    id="closeCart"
+                    aria-label="بستن سبد خرید">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    سبد خرید شما خالی است.
+                </p>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <strong>
+                    جمع کل:
+                </strong>
+
+                <span id="cartTotal">
+                    ۰ تومان
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="checkoutBtn"
+                class="checkout-btn">
+
+                ادامه و تکمیل اطلاعات
+
+            </button>
+
+        </div>
+
     </div>
+    <!-- Footer -->
+    <footer>
 
-<div class="buttons-container">
-    <button onclick="location.href='fa1.html'">به  نخل  ولایت   ثمر فاطمه </button>
-    <button onclick="location.href='fa2.html'">« رازونیاز ابی عبدالله (ع) »</button>
-    <button onclick="location.href='mota9.html'">«لایلای ای جبهه لرین یورقونی ای خسته جوانلار»   </button>
-    <button onclick="location.href='mota10.html'">« خدیجه(س)»</button>
-    <button onclick="location.href='mota12.html'">«تقدیم به همه حماسه آفرینان ایران زمین»</button>
-    <button onclick="location.href='index-arz13.html'">«منتظرت هستم»</button>
-    <button onclick="location.href='page7.html'">نوحه 7</button>
-    <button onclick="location.href='page8.html'">نوحه 8</button>
-    <button onclick="location.href='page9.html'">نوحه 9</button>
-    <button onclick="location.href='page10.html'">نوحه 10</button>
-    <button onclick="location.href='page11.html'">نوحه 11</button>
-    <button onclick="location.href='page12.html'">نوحه 12</button>
-    <button onclick="location.href='page13.html'">نوحه 13</button>
-    <button onclick="location.href='page14.html'">نوحه 14</button>
-    <button onclick="location.href='page15.html'">نوحه 15</button>
-    <button onclick="location.href='page16.html'">نوحه 16</button>
-    <button onclick="location.href='page17.html'">نوحه 17</button>
-    <button onclick="location.href='page18.html'">نوحه 18</button>
-    <button onclick="location.href='page19.html'">نوحه 19</button>
-    <button onclick="location.href='page20.html'">نوحه 20</button>
-    <button onclick="location.href='page21.html'">نوحه 21</button>
-    <button onclick="location.href='page22.html'">نوحه 22</button>
-    <button onclick="location.href='page23.html'">نوحه 23</button>
-    <button onclick="location.href='page24.html'">نوحه 24</button>
-    <button onclick="location.href='page25.html'">نوحه 25</button>
-</div>
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <h2>میثاق جرعه نوشان</h2>
+
+                <p>
+نوحه‌ها و اشعار محمدعلی مصیبی تبریزی
+                </p>
+            </div>
 
 
-    <script>
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+            <div class="footer-links">
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-        const searchInput = document.getElementById("searchInput");
-        const buttons = document.querySelectorAll(".buttons-container button");
+                <a href="index1.html">
+                    خانه
+                </a>
 
-        searchInput.addEventListener("input", function () {
-            const searchText = this.value.toLowerCase();
-            buttons.forEach(button => {
-                if (button.textContent.toLowerCase().includes(searchText)) {
-                    button.style.display = "block";
-                } else {
-                    button.style.display = "none";
-                }
-            });
-        });
+                <a href="index2.html">
+                    نوحه ترکی
+                </a>
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
-        window.location.href = this.href;
-    });
-});
+                <a href="index3.html">
+                    نوحه فارسی
+                </a>
 
-// جلوگیری از لمس طولانی (موبایل)
-document.addEventListener('touchstart', function preventLongPress(e) {
-    if (e.touches.length > 1) {
-        e.preventDefault();
-    }
-}, {passive: false});
-document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey && ['c','x','s','u'].includes(e.key.toLowerCase())) || e.key === 'F12') {
-        e.preventDefault();
-    }
-}, false);
-window.addEventListener("load", function() {
-    // حداقل 5 ثانیه نمایش
-    setTimeout(function() {
-        document.body.classList.add("loaded");
-    }, 460);
-});
-    </script>
+                <a href="index4.html">
+                    متفرقه
+                </a>
 
-<footer> 
-  <p>
-    طبق ماده 12 فصل سوم قانون جرائم رایانه هرگونه کپی برداری ممنوع بوده و پیگرد قانونی دارد.<br>
-    کلیه حقوق مادی و معنوی سایت نزد میثاق جرعه نوشان(محمدعلی مصیبی تبریزی) محفوظ است.<br> 
-    madahi-mosayyeb.ir ©
-  </p> 
+            </div>
 
-  <div class="footer-social"> 
-    <hr> 
+
+            <div class="footer-telegram">
+
+                <span>
+                    ارتباط و دریافت مطالب
+                </span>
+
     <div class="device">
       <span>گوشی / تبلت</span>
       <a href="tg://resolve?domain=mosayyebi110" target="_blank" title="تلگرام">
@@ -137,8 +537,206 @@ window.addEventListener("load", function() {
         <img src="images/img2.png" alt="Telegram">
       </a>
     </div>
-  </div>
-</footer>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                کلیه حقوق مادی و معنوی سایت نزد
+                میثاق جرعه نوشان (محمدعلی مصیبی تبریزی)
+                محفوظ است.
+            </p>
+
+            <p>
+                madahi-mosayyeb.ir ©
+            </p>
+
+        </div>
+
+    </footer>
+
+<script src="ss.js"></script>
+
+    <script>
+
+        /* =========================
+           MENU
+        ========================= */
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen =
+                navLinks.classList.contains("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* =========================
+           CLOSE MENU
+        ========================= */
+
+        document.querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+            });
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const clearSearch =
+            document.getElementById("clearSearch");
+
+        const cards =
+            document.querySelectorAll(".poem-card");
+
+        const noResults =
+            document.getElementById("noResults");
+
+        const searchResult =
+            document.getElementById("searchResult");
+
+
+        function searchPoems() {
+
+            const value =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+            let found = 0;
+
+
+            cards.forEach(card => {
+
+                const text =
+                    card.textContent.toLowerCase();
+
+                if (text.includes(value)) {
+
+                    card.classList.remove("hidden");
+
+                    found++;
+
+                } else {
+
+                    card.classList.add("hidden");
+
+                }
+
+            });
+
+
+            if (value === "") {
+
+                cards.forEach(card =>
+                    card.classList.remove("hidden")
+                );
+
+                searchResult.textContent =
+                    "۲۵ عنوان در آرشیو";
+
+                noResults.classList.remove("show");
+
+                clearSearch.classList.remove("show");
+
+                return;
+            }
+
+
+            clearSearch.classList.add("show");
+
+
+            searchResult.textContent =
+                `${found} نتیجه پیدا شد`;
+
+
+            if (found === 0) {
+
+                noResults.classList.add("show");
+
+            } else {
+
+                noResults.classList.remove("show");
+
+            }
+
+        }
+
+
+        searchInput.addEventListener(
+            "input",
+            searchPoems
+        );
+
+
+        clearSearch.addEventListener(
+            "click",
+            () => {
+
+                searchInput.value = "";
+
+                searchPoems();
+
+                searchInput.focus();
+
+            }
+        );
+
+
+        /* =========================
+           LOADER
+        ========================= */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                setTimeout(() => {
+
+                    document.body.classList.add(
+                        "loaded"
+                    );
+
+                }, 500);
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
